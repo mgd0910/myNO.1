@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="headTop">
+            <div class="wrap">
+                <div class="address">
+                    <div class="city">
+                        <img src="img/1.gif">
+                        <span class="text">收货地址</span>
+                    </div>
+                </div>
+                <div id="wrapRight">
+                    <ul>
+                        <li id="global_unlogin">
+                            <div class="unlogin"">
+                                <span class=" hd_hi">下午好,请</span>
+                                <a href="#" class="login">登录&nbsp;</a>
+                                <a href="#" class="reg">&nbsp;注册</a>
+                            </div>
+                        </li>
+                        <li id="loginSucId">
+                            <div class="hd_login">
+                                <div class="hd_login_name_con">
+                                    <span class="hd_hi">下午好,</span>
+                                    <a href="#" class="hd_login_name">__nickName__</a>
+                                    <a href="#" class="hd_login_out">退出</a>
+                                </div>
+                                <a href="#" class="hd_vip hd_vip__gradeStyle__">__gradeDesc__</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="hd_menu">
+                                <a href="#">
+                                    <i class="iconfont icon-huiyuan"></i>
+                                    <span class="text">会员俱乐部</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="hd_menu">
+                                <a href="#" target="_blank" rel="nofollow">
+                                    <i class="iconfont icon-dingdan"></i>
+                                    <span class="text">我的订单</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="header_bottom">
+            <div class="header_bp">
+                <div class="wrap hd_header">
+                    <div class="hd_logo_area">
+                        <a href="#" class="hd_logo">
+                            <img src="img/1.jpg">
+                        </a>
+                        <a class="hd_slogan" href="#">
+                            <div class="inner">
+                                <img src="img/1.1.jpg"></div>
+                        </a>
+                    </div>
+                    <div class="hd_header_right">
+                        <div class="clearfix">
+                            <div class="hd_head_search">
+                                <div class="hd_search_form hd_search_normal" id="hdSearchForm">
+                                    <div class="hd_fixed_wrap">
+                                        <a href="#" class="hd_fixed_logo">
+                                            <img src="img/1.2.jpg" width="205" height="60">
+                                        </a>
+                                        <div class="hd_search_wrap clearfix">
+                                            <label for="keyword" class="hd_search_tip" style="display:none;"></label>
+                                            <input class="hd_search_ipt" name="keyword" id="keyword" type="text"
+                                                value="" placeholder="签字笔" original="签字笔" url="">
+                                            <button type="button" class="hd_search_btn">
+                                                <!-- onclick="javascript:searchMeForClick(); -->
+                                                <i class="iconfont icon-iconset0157"></i>
+                                            </button>
+                                        </div>
+                                        <!--搜索提示 begin-->
+                                        <div id="searchSuggest" class="hd_search_tips_result " style="display: block;">
+                                        </div>
+                                        <!-- onmouseover="$('#searchSuggest').show() -->
+                                        <!--搜索提示 end-->
+                                    </div>
+                                </div>
+                                <p id="hotKeywordsShow" class="hd_hot_search">
+                                    <a href="#">零冷水</a>
+                                    <a href="#">酒精湿巾</a>
+                                    <a href="#">退热贴</a>
+                                    <a href="#">微软电脑</a>
+                                    <a href="#">洁柔</a>
+                                    <a href="#">擦手纸巾</a>
+                                    <a href="#">塔扇</a>
+                                </p>
+                            </div>
+                            <div class="hd_mini_cart" id="miniCart">
+                                <u class="hd_c_num " id="in_cart_num" style="display: none"></u>
+                                <a class="hd_prism_cart" href="#">
+                                    <img src="img/9.gif">
+                                    <span>购物车</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hd_header_nav">
+                        <div class="category-list-root category-list-root_global">
+                            <div class="category-title category-title_global" id="categoriesId">
+                                <img src="img/4.gif">
+                                <span>全部类目</span>
+                                <img src="img/5.gif" class="jiantou">
+                            </div>
+                        </div>
+                        <div class="category-list" id="listId"></div>
+                        <ul class="clearfix nav-list">
+                            <li>
+                                <a href="#">抢金币</a>
+                            </li>
+                            <li>
+                                <a href="#">金币签到</a>
+                            </li>
+                            <li>
+                                <a href="#">充值</a>
+                            </li>
+                            <li>
+                                <a href="#">超级单品</a>
+                            </li>
+                            <li>
+                                <a href="#">超级品牌</a>
+                            </li>
+                            <li>
+                                <a href="#">超级品类</a>
+                            </li>
+                            <li>
+                                <a href="#">领券中心</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 轮播图 -->
+    <div id="bannerId"></div>
+
+    <!-- 新人会场 -->
+    <div id="newId"></div>
+
+    <!-- 超级单品 -->
+    <div id="superId">
+        <ul id="superUlId">
+            <li class="single_one">
+                <a href="#">
+                    <img class="single_logo" src="img/super.png">
+                    <div class="single_text">
+                        <span class="sing_text_font">限时 限量 品质 超值</span>
+                        <span class="single_text_line"></span>
+                    </div>
+                    <div class="single_djs">
+                        <div class="djs_title">
+                            <img src="img/7.gif">
+                            <div class="s_text">距结束仅剩</div>
+                        </div>
+                        <div class="count_time">
+                            <span id="hour">01</span>
+                            <i>:</i>
+                            <span id="minutes">36</span>
+                            <i>:</i>
+                            <span id="second">00</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 超级品牌 -->
+    <div id="brand"> </div>
+
+</body>
+
+</html>
+<script src="js/index.js"></script>
+<script src="js/banner.js"></script>
