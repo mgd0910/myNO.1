@@ -679,5 +679,177 @@ body {
     position: relative;
     margin: 0 auto;
     margin-top: 20px;
-    /* background-color: red; */
+    box-sizing: border-box;
 }
+
+/* 品质进口 */
+#con{
+    width: 1070px;
+    height: 421px;
+    background-color: #fff;
+    margin: 20px auto 0;
+}
+
+/* 懂你想要 */
+#pickId{
+    width: 1070px;
+    height: 421px;
+    background-color: #fff;
+    margin: 20px auto 0;
+}
+
+#floor_knowU{
+    position: relative;
+    width: 1070px;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+
+
+/* 底部 */
+.ft_wrap{
+    background: #fff;
+}
+
+.ft_footer{
+    margin: 0 auto;
+    width: 1070px;
+    height: 66px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.ft_footer a{
+    float: left;
+    display: block;
+    width: 205px;
+    height: 66px;
+    overflow: hidden;
+    margin: 0 51px;
+    margin-right: 81px;
+    margin-left: 0px;
+    cursor: default;
+}
+.ft_footer a:nth-child(4){
+    margin-right: 0px;
+}
+
+.ft_footer a img {
+    float: left;
+    display: block;
+    width: 66px;
+    height: 66px;
+    margin-right: 15px;
+}
+
+.ft_footer a b {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.ft_footer a span {
+    font-size: 14px;
+    color: #999;
+    line-height: 26px;
+}
+
+.ft_service{
+    margin: 0 auto;
+    width: 1070px;
+    padding: 20px 0 20px;
+    overflow: hidden;
+}
+
+#bottomHelpLinkId{
+    float: left;
+    padding-left: 15px;
+}
+
+#bottomHelpLinkId dl {
+    float: left;
+    display: block;
+    width: 195px;
+}
+
+#bottomHelpLinkId dl dt {
+    height: 32px;
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 32px;
+    overflow: hidden;
+    color: #666;
+    font-weight: bold;
+}
+
+#bottomHelpLinkId dl dd {
+    height: 24px;
+    padding: 0 8px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: normal;
+    font-size: 12px;
+}
+
+#bottomHelpLinkId dl dd a {
+    color: #666;
+}
+
+#bottomHelpLinkId dl dd a:hover{
+    color: #f3444d;
+}
+
+
+#footerQRcode{
+    width: 280px;
+    overflow: hidden;
+    float: left;
+    margin-right: -50px;
+}
+
+.mobile_code{
+    float: left;
+    margin-right: 50px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+.mobile_code img{
+    width: 90px;
+    height: 90px;
+}
+
+#footer p {
+    color: #666;
+    text-align: center;
+    text-indent: 0;
+    line-height: 100%;
+    margin: 15px 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.ft_footer_link a {
+    color: #333;
+    margin: 0px 3px;
+}
+.ft_footer_link a:hover{
+    color: #f3444d;
+}
+
+.ft_pic_link {
+    display: block;
+    padding: 10px 0 20px;
+    text-align: center;
+    font-size: 0;
+}
+
+.ft_pic_link a {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+

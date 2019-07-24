@@ -61,7 +61,13 @@ class BannerPlayer{
 			if(i==0){
 				imgDom.style.zIndex = 2;
 			}
-			this.boxDom.appendChild(imgDom);
+
+			let a=document.createElement("a");
+			a.href="#";
+			this.boxDom.appendChild(a);
+			a.appendChild(imgDom);
+
+			// this.boxDom.appendChild(imgDom);
 			this.imgDoms.push(imgDom);
 		}
 		//2、创建豆豆
