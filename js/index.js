@@ -1,41 +1,83 @@
-//搜索框划过效果
-$$("#keyword").onmouseover = function () {
-    this.style.cssText = `
-        border :1px solid  #ff4040;
-        background-color: #fff;
+window.onload = function () {
+    // 轮播图
+    new BannerPlayer({
+        width: 1920,
+        height: 400,
+        imgs: ["img/banner1.jpg", "img/banner2.jpg", "img/banner3.jpg", "img/banner4.jpg"],
+        douWidth: 110,
+        douHeight: 40,
+        douJianGe: 10,
+        douColor: "#fff",
+        douHighColor: "#000",
+        timeSpace: 1500,
+        douIsCircle: false
+    }, $$("#bannerId"));
 
-    `;
+    category();
+
+    newPeople();
+
+    djs();
+
+    superShop();
+
+    superBrand();
+
+    quality();
+
+    pick();
+
+    YouKnow();
+
+    rightEwm();
+
+    souSuo();
+
+    overOrout();
 }
 
-$$("#keyword").onmouseout = function () {
-    this.style.cssText = `
-        border :1px solid black;
-        background-color: #fcfcfc;
-    `;
-}
-//搜索框焦点效果
-$$("#keyword").onfocus = function () {
-    $$("#searchSuggest").style.cssText = `
-        display: block;
-    `;
-}
-$$("#keyword").onblur = function () {
-    $$("#searchSuggest").style.cssText = `
-        display: none;
-    `;
-}
 
-$$("#categoriesId").onmousemove = function () {
-    $$("#listId").style.cssText = `display:block`;
-}
-$$("#categoriesId").onmouseout = function () {
-    $$("#listId").style.cssText = `display:none`;
-}
-$$("#listId").onmousemove = function () {
-    this.style.cssText = `display:block`;
-}
-$$("#listId").onmouseout = function () {
-    this.style.cssText = `display:none`;
+
+function overOrout(){
+        //搜索框划过效果
+    $$("#keyword").onmouseover = function () {
+        this.style.cssText = `
+            border :1px solid  #ff4040;
+            background-color: #fff;
+
+        `;
+    }
+
+    $$("#keyword").onmouseout = function () {
+        this.style.cssText = `
+            border :1px solid black;
+            background-color: #fcfcfc;
+        `;
+    }
+    //搜索框焦点效果
+    $$("#keyword").onfocus = function () {
+        $$("#searchSuggest").style.cssText = `
+            display: block;
+        `;
+    }
+    $$("#keyword").onblur = function () {
+        $$("#searchSuggest").style.cssText = `
+            display: none;
+        `;
+    }
+
+    $$("#categoriesId").onmousemove = function () {
+        $$("#listId").style.cssText = `display:block`;
+    }
+    $$("#categoriesId").onmouseout = function () {
+        $$("#listId").style.cssText = `display:none`;
+    }
+    $$("#listId").onmousemove = function () {
+        this.style.cssText = `display:block`;
+    }
+    $$("#listId").onmouseout = function () {
+        this.style.cssText = `display:none`;
+    }
 }
 
 //动态添加盒子
@@ -135,38 +177,6 @@ function category() {
     }
 }
 
-
-
-
-
-window.onload = function () {
-    // 轮播图
-    new BannerPlayer({
-        width: 1920,
-        height: 400,
-        imgs: ["img/banner1.jpg", "img/banner2.jpg", "img/banner3.jpg", "img/banner4.jpg"],
-        douWidth: 110,
-        douHeight: 40,
-        douJianGe: 10,
-        douColor: "#fff",
-        douHighColor: "#000",
-        timeSpace: 1500,
-        douIsCircle: false
-    }, $$("#bannerId"));
-
-    category();
-    newPeople();
-    djs();
-    superShop();
-    superBrand();
-    quality();
-    pick();
-    YouKnow();
-    rightEwm();
-    // topGo();
-}
-
-
 //新人会场
 function newPeople() {
     let newMan = document.createElement("a");
@@ -176,7 +186,6 @@ function newPeople() {
     imgMan.src = "img/newman.png";
     newMan.appendChild(imgMan);
 }
-
 
 // 倒计时
 function djs() {
@@ -606,7 +615,6 @@ function superBrand() {
         }
     }
 }
-
 
 // 品质进口
 function quality() {
@@ -1337,7 +1345,6 @@ function know(arr) {
     status_dd.appendChild(line_right);
 }
 
-
 //动态创建右侧二维码
 function rightEwm() {
     let happy_summer = document.createElement("div");
@@ -1349,10 +1356,25 @@ function rightEwm() {
         left: 50%;
         margin-left: 540px;
         z-index: 10000;
+        display:none;
     `;
-    // happy_summer.id="topId";
-    // display:none;
     document.body.appendChild(happy_summer);
+
+    window.onscroll=function() {
+        if (document.documentElement.scrollTop>=1000) {
+            happy_summer.style.display="block";
+        }
+        if (document.documentElement.scrollTop<=100) {
+            happy_summer.style.display="none";
+        }
+
+        if (document.documentElement.scrollTop>=700) {
+            $$("#sousuoId").style.display="block";
+        }
+        if (document.documentElement.scrollTop<=700) {
+             $$("#sousuoId").style.display="none";
+        }
+    };
 
     let happy_bott = document.createElement("div");
     happy_bott.style.cssText = `
@@ -1453,17 +1475,14 @@ function rightEwm() {
         cursor: pointer;
         display: block;
     `;
-    // h_zd.id="goTopId";
     h_zd.innerHTML = "TOP&nbsp;"
     happy_summer.appendChild(h_zd);
     //回到顶部
     h_zd.onclick=function() {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        console.log(scrollTop);
         if (scrollTop != 0) {
-            scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
-        console.log(scrollTop);
     };
 
     let img2 = document.createElement("img");
@@ -1472,6 +1491,116 @@ function rightEwm() {
 
 }
 
+//滑动搜索框
+function souSuo(){
+    let divDom=document.createElement("div");
+    divDom.style.cssText=`
+        width: 1070px;
+        height: 60px;
+        margin:0 auto;
+    `;
+    $$("#sousuoId").appendChild(divDom);
+
+    let a1=document.createElement("a");
+    a1.style.cssText=`
+        display: block;
+        width: 150px;
+        height: 60px;
+        float: left;
+        margin-right: 70px;
+    `;
+    a1.href="#";
+    divDom.appendChild(a1);
+
+    let img1=document.createElement("img");
+    img1.style.cssText=`
+        width: 150px;
+        height: 60px;
+    `;
+    img1.src="img/3.jpg";
+    a1.appendChild(img1);
+
+    let divdom2=document.createElement("div")
+    divdom2.style.cssText=`
+        width:510px;
+        height:40px;
+        border-radius: 100px;
+        float: left;
+        margin: 10px 0 0 0;
+        position: relative;
+        padding: 2px;
+        background-color: #ff4040;
+    `;
+    divDom.appendChild(divdom2);
+
+    inputDom=document.createElement("input");
+    inputDom.style.cssText=`
+        width: 406px;
+        height: 41px;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        background-color: #fff;
+        float: left;
+        outline: 0 none;
+        border: 0 none;
+        padding-left: 32px;
+        font-size: 14px;
+        color: #333;
+        line-height: 36px;
+    `;
+    divdom2.appendChild(inputDom);
+
+    let button=document.createElement("button");
+    button.style.cssText=`
+        float: left;
+        height: 36px;
+        border: 0 none;
+        background-color: #ff4040;
+        text-align: center;
+        line-height: 36px;
+        color: #fff;
+        cursor: pointer;
+        outline: 0;
+    `;
+    divdom2.appendChild(button);
+
+    let img2=document.createElement("img")
+    img2.style.cssText=`
+        margin-left:15px;
+    `;
+    img2.src=`img/13.gif`;
+    button.appendChild(img2);
+
+    let divdom3=document.createElement("div");
+    divdom3.style.cssText=`
+        width:122px;
+        height:44px;
+        float: right;
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 10px;
+        border-radius:22px;
+        text-align: center;
+        line-height:44px;
+        border:1px solid #000;
+    `;
+    divDom.appendChild(divdom3);
+
+    let img3=document.createElement("img");
+    img3.style.cssText=`
+        display: inline-block;
+    `;
+    img3.src="img/2.jpg";
+    divdom3.appendChild(img3);
+
+    let spanDom=document.createElement("span");
+    spanDom.style.cssText=`
+        margin-left:10px;
+    `;
+    spanDom.innerHTML="购物车";
+    divdom3.appendChild(spanDom);
+}
 
 function $$(str) {
     if (str.charAt(0) == "#") {
@@ -1482,3 +1611,4 @@ function $$(str) {
         return document.getElementsByTagName(str);
     }
 }
+

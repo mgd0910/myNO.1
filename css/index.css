@@ -853,3 +853,16 @@ body {
 }
 
 
+#sousuoId{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1050;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,0.05);
+    background-color: #fff;
+    display: none;
+}
+
+
