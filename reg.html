@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reg.css">
+    <title>注册</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="wrap">
+            <a href="index.html" class="logo fl">
+                <img src="imgs/1.jpg">
+            </a>
+            <div class="header_right fr">
+                <span class="fl">
+                    您好，欢迎光临1号店！
+                    <a href="login.html" class="blue_link">请登录</a>
+                </span>
+                <div class="help_wrap fr">
+                    <a href="#" class="hd_menu">
+                        <s class="help_ico"></s>
+                        帮助中心
+                    </a>
+                    <ul class="help_ul">
+                        <li></li>
+                        <li><a href="#">包裹跟踪</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">在线退换货</a></li>
+                        <li><a href="#">在线投诉</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 表单验证 -->
+    <div class="regist">
+        <!-- 背景图标 -->
+        <div class="r_icon1"></div>
+        <div class="r_icon2"></div>
+        <div class="r_icon3"></div>
+        <div class="r_icon4"></div>
+        <div class="r_icon5"></div>
+
+        <!-- 表单 -->
+        <div class="regist_model">
+            <h4>1号店注册</h4>
+            <div class="regist_form">
+                <ul>
+                    <li id="li1Id">
+                        <div class="y_same_item">
+                            <input class="ysame_input txt" type="text" _input="" value="" id="userName">
+                            <span class="y_same_label">用户名</span>
+                        </div>
+                        <div class="regist_tips">
+                            <div class="regtip_rel" style="top: 6px;">
+                                <i></i>
+                                <div class="tips_words">*必填，6-16位数字、字母组合，且以字母开头</div>
+                            </div>
+                        </div>
+                        <div class="regist_right"></div>
+                    </li>
+                    <li id="li2Id">
+                        <div class="y_same_item">
+                            <input class="ysame_input txt" type="text" _input="" value="" id="phone">
+                            <span class="y_same_label">手机号</span>
+                        </div>
+                        <div class="regist_tips">
+                            <div class="regtip_rel" style="top: -4px;">
+                                <i></i>
+                                <div class="tips_words">*必填，11位纯数字</div>
+                            </div>
+                        </div>
+                        <div class="regist_right"></div>
+                    </li>
+                    <li class="ishort_li" id="validCodeDiv" style="display: none">
+                        <div class="same_item fl">
+                            <input class="ysame_input" type="text" _input="" value="" id="validCode">
+                            <span class="y_same_label">验证码</span>
+                        </div>
+                        <a href="#" class="yzm_code fl" id="changevalidate">
+                            <img id="validateImg" width="124" height="50">
+                            <span class="yzm_change">
+                                <em></em>
+                                <i>换一张</i>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="ishort_li" id="validPhoneCodeDiv">
+                        <div class="same_item fl">
+                            <input class="ysame_input" type="text" value="" id="validPhoneCode">
+                            <span class="y_same_label">短信验证码</span>
+                        </div>
+                        <input type="button" value="获取验证码" id="getYzmId">
+                    </li>
+                    <li id="li3Id">
+                        <div class="y_same_item">
+                            <input class="ysame_input txt" type="password" oncopy="return false;" oncut="return false;"
+                                onpaste="return false;" autocomplete="off" id="password">
+                            <span class="y_same_label">设置密码</span>
+                        </div>
+                        <div class="regist_tips">
+                            <div class="regtip_rel" style="top: 6px;">
+                                <i></i>
+                                <div class="tips_words">*必填，6-16个字母、数字组合，不能为纯数字</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="li4Id">
+                        <div class="y_same_item">
+                            <input class="ysame_input" type="password" oncopy="return false;" oncut="return false;"
+                                onpaste="return false;" id="password2">
+                            <span class="y_same_label">确认密码</span>
+                        </div>
+                        <div class="regist_tips" style="top: 6px;">
+                            <div class="regtip_rel">
+                                <i></i>
+                                <div class="tips_words">*必填，再次输入密码</div>
+                            </div>
+                        </div>
+                        <div class="regist_right"></div>
+                    </li>
+                    <li>
+                        <div class="agreement_word">点击注册，表示您同意1号店
+                            <a href="#">《服务协议及隐私声明》</a>
+                        </div>
+                        <input type="button" class="agreement_btn" id="register_button" value="同意协议并注册">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div id="simplefooter">
+        <a href="#" >沪ICP备16050468号</a>
+        |
+        <a>沪B2-20170039</a>
+        |
+        <a href="#">营业执照</a>
+        <p>Copyright © 1号店网上超市 2007-2018，All Rights Reserved</p>
+    </div>
+</body>
+
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/reg.js"></script>
