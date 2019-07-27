@@ -36,6 +36,7 @@ img {
 
 body {
     font-family: "微软雅黑";
+    font-size: 12px;
 }
 
 .fl {
@@ -44,4 +45,235 @@ body {
 
 .fr {
     float: right;
+}
+
+.blue_link {
+    color: rgb(0, 102, 204);
+}
+
+.cur {
+    z-index: 101;
+    border: 1px solid #aaa;
+}
+
+
+/* 头部 */
+.header {
+    padding: 16px;
+    background: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
+    border-image: initial;
+}
+
+.wrap {
+    width: 1200px;
+    margin: 0px auto;
+    height: 48px;
+}
+
+.logo {
+    display: block;
+    float: left;
+    width: 54px;
+    height: 48px;
+}
+
+.header_right {
+    line-height: 18px;
+    color: rgb(153, 153, 153);
+    font-family: SimSun;
+    font-size: 12px;
+}
+
+.help_wrap {
+    background: #FFF;
+    position: relative;
+    z-index: 1010;
+    padding: 0 6px;
+    margin-left: 25px;
+}
+
+.hd_menu {
+    padding-right: 18px;
+    color: #333;
+    background: url(../imgs/regist.png) no-repeat right -30px;
+}
+
+.help_ico {
+    width: 16px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../imgs/regist.png) no-repeat -344px 0;
+}
+
+.help_ul {
+    width: 93px;
+    position: absolute;
+    left: 4px;
+    top: -5px;
+    display: none;
+    opacity: 0.5;
+}
+
+.help_ul li {
+    display: block;
+    width: 93px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.help_ul li a {
+    color: #000;
+}
+
+/* 登录 */
+
+.login_wrap {
+    padding: 26px 0 0;
+    background: url(../imgs/regist_topshadow.png) repeat-x;
+    overflow: hidden;
+}
+
+.wrap {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.mod_left {
+    margin-top: 45px;
+    width: 510px;
+    height: 315px;
+}
+
+.mod_left img {
+    width: 510px;
+    height: 315px;
+}
+
+.mod_login {
+    position: relative;
+    width: 330px;
+    padding: 45px 35px 0 35px;
+    background-color: #fff;
+}
+
+.error_tips {
+    position: absolute;
+    top: 9px;
+    left: 35px;
+    width: 282px;
+    height: 30px;
+    overflow: hidden;
+    padding: 0 10px 0 36px;
+    border: 1px solid #e5debc;
+    border-radius: 2px;
+    background: #fff7d1 url(../imgs/login.png) no-repeat -324px -150px;
+    line-height: 30px;
+    color: #999;
+}
+
+.mod_login h3 {
+    float: left;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.regist_new {
+    line-height: 30px;
+}
+
+.login_form {
+    position: relative;
+    padding: 0 0 18px;
+}
+
+.form_item_wrap {
+    width: 330px;
+    margin: 0 auto;
+}
+
+.form_item {
+    position: relative;
+    height: 24px;
+    margin-bottom: 10px;
+    padding: 14px 18px;
+    border: 1px solid #dedede;
+    background: #FFF;
+    line-height: 24px;
+}
+
+.user_ico {
+    background: url(../imgs/login_new.png) no-repeat -50px 4px;
+}
+
+.form_item label {
+    display: inline-block;
+    width: 42px;
+    vertical-align: middle;
+    color: #666;
+}
+
+.gay_text {
+    color: #ccc;
+}
+
+.ipt {
+    width: 230px;
+    height: 24px;
+    padding-left: 3px;
+    border: 0 none;
+    line-height: 24px;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.paswd_ico {
+    background: url(../imgs/login_new.png) no-repeat -150px 4px;
+}
+
+
+.verify_code {
+    height: 52px;
+    margin-bottom: 10px;
+    padding: 0;
+    border: 0 none;
+}
+
+.auto_login {
+    position: relative;
+    margin: 10px 0;
+    line-height: 24px;
+    min-height: 24px;
+}
+
+
+.joint_landing_wrap {
+    position: relative;
+    z-index: 10;
+}
+
+/* 底部 */
+#simplefooter {
+    width: 980px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+#simplefooter a {
+    margin: 0 8px;
+    color: #333;
+}
+
+#simplefooter p {
+    margin-top: 10px;
+    color: #333;
 }

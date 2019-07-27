@@ -376,6 +376,17 @@ body {
     outline: 0;
 }
 
+#search-list {
+    margin: 0 auto;
+    width: 600px;
+}
+#search-list li {
+    padding: 0 10px;
+    line-height: 30px;
+    background: #fff;
+    border-bottom: 1px dashed #ccc;
+}
+
 .icon-iconset0157 {
     color: #666;
     font-size: 24px;
