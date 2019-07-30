@@ -55,16 +55,16 @@ function overOrout(){
         `;
     }
     //搜索框焦点效果
-    $$("#keyword").onfocus = function () {
-        $$("#searchSuggest").style.cssText = `
-            display: block;
-        `;
-    }
-    $$("#keyword").onblur = function () {
-        $$("#searchSuggest").style.cssText = `
-            display: none;
-        `;
-    }
+    // $$("#keyword").onfocus = function () {
+    //     $$("#searchSuggest").style.cssText = `
+    //         display: block;
+    //     `;
+    // }
+    // $$("#keyword").onblur = function () {
+    //     $$("#searchSuggest").style.cssText = `
+    //         display: none;
+    //     `;
+    // }
 
     $$("#categoriesId").onmousemove = function () {
         $$("#listId").style.cssText = `display:block`;

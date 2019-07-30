@@ -1,5 +1,5 @@
 /* 
-头部的js文件，划过显示和变色效果
+头部和底部的js文件，划过显示和变色效果
 */
 $(function(){
     $(".help_wrap").mouseover(function () { 
@@ -17,6 +17,14 @@ $(function(){
     $(".help_ul li a").mouseout(function () { 
         $(this).css("color","#000");
     });
+
+    $("#simplefooter a").mouseover(function () { 
+        $(this).css("color","#ff4040");
+    });
+
+    $("#simplefooter a").mouseout(function () { 
+        $(this).css("color","#000");
+    });
 })
 
 
@@ -24,6 +32,15 @@ $(function(){
 表单输入效果,隐藏，移动，显示
 */
 
+
+$(function(){
+    $("#username").focus(function (e) { 
+        $(this).prev().animate({"left":"-80px"},200);
+        $(this).next().css({display:"block",backgroundColor:"#fff4d7"});
+        $(this).next().next().css({display:"block",borderColor:"transparent #fff4d7 transparent transparent"})
+    });
+})
+/* 
 $(function(){
     //用户名
     $("#userName").focus(function (e) { 
@@ -57,7 +74,7 @@ $(function(){
         $(this).siblings().animate({"left":"-65px"},200);
         $("#li4Id .regist_tips").css({display:"block"});
     });
-})
+}) */
 
 
 

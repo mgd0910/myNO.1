@@ -50,7 +50,7 @@
         <!-- 表单 -->
         <div class="regist_model">
             <h4>1号店注册</h4>
-            <div class="regist_form">
+            <!-- <div class="regist_form">
                 <ul>
                     <li id="li1Id">
                         <div class="y_same_item">
@@ -132,13 +132,46 @@
                         <input type="button" class="agreement_btn" id="register_button" value="同意协议并注册">
                     </li>
                 </ul>
-            </div>
+            </div> -->
+           
+
+
+                <div class="y_same_item">
+                    <span class="user">用户名</span>
+                    <input id="username" type="text" class="txt" name="username">
+                    <span class="tishi">*必填，6-16位数字、字母组合，且以字母开头</span>
+                    <i></i>
+                </div>
+            <!-- <br><br> -->
+                <div class="y_same_item">
+                    <span class="user">手机号</span>
+                    <input id="userphone" type="text" class="txt" name="userphone">
+                    <i></i>
+                    <span class="tishi">*必填，11位纯数字</span>
+                </div>
+            <!-- <br><br> -->
+                <div class="y_same_item">
+                    <span class="user">设置密码</span>
+                    <input id="userpass" type="password" class="txt" name="userpass">
+                    <i></i>
+                    <span class="tishi">*必填，6-16个字母、数字组合，不能为纯数字</span>
+                </div>
+            <!-- <br><br> -->
+                <div class="y_same_item">
+                    <span class="user">确认密码</span>
+                    <input id="checkpass" type="password">
+                    <i></i>
+                    <span class="tishi">*必填，再次输入密码</span>
+                </div>
+            <!-- <br><br> -->
+            <input type="button" value="注册" onclick="regSave()" /><br>
+            <span id="msg"></span>
         </div>
     </div>
 
     <!-- 底部 -->
     <div id="simplefooter">
-        <a href="#" >沪ICP备16050468号</a>
+        <a href="#">沪ICP备16050468号</a>
         |
         <a>沪B2-20170039</a>
         |

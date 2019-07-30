@@ -210,7 +210,7 @@ body {
     color: #333;
 }
 
-.regist_form{
+/* .regist_form{
     
 }
 
@@ -405,21 +405,98 @@ body {
     color: #fff;
     text-align: center;
     border-radius: 2px;
+}  */
+
+/* 表单 */
+
+.y_same_item {
+    position: relative;
+    z-index: 2;
+    width: 328px;
+    height: 50px;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
 
-#simplefooter{
+.user {
+    display: block;
+    height: 48px;
+    line-height: 50px;
+    float: left;
+    margin-left:20px;
+    z-index: 999;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+.y_same_item input {
+    position: relative;
+    z-index: 2;
+    width: 288px;
+    height: 20px;
+    margin-top: 15px;
+    padding: 0px 20px;
+    background: 0;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+    float: left;
+}
+
+.regist_model i {
+    z-index: 2;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    line-height: 0;
+    margin-top: -5px;
+    border-color: transparent;
+    border-style: dashed solid dashed dashed;
+    border-width: 5px;
+    font-size: 0;
+    /* border-color: transparent #fff4d7 transparent transparent; */
+}
+
+.y_same_item i {
+    position: absolute;
+    left: 330px;
+    top: 50%;
+}
+
+.y_same_item .tishi {
+    font-size: 12px;
+    position: absolute;
+    width: 100px;
+    min-height: 48px;
+    left: 340px;
+    top: 0px;
+    /* background-color: #fff4d7; */
+    display: none;
+}
+
+
+.y_same_item input{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#simplefooter {
     width: 980px;
     margin: 20px auto 0;
     text-align: center;
     font-size: 12px;
 }
 
-#simplefooter a{
+#simplefooter a {
     margin: 0 8px;
     color: #333;
 }
 
-#simplefooter p{
+#simplefooter p {
     margin-top: 10px;
     color: #333;
 }

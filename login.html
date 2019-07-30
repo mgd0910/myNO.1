@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/iconfont1.css">
 </head>
 
 <body>
@@ -57,26 +58,117 @@
                         <div class="form_item_wrap">
                             <div class="form_item">
                                 <label class="user_ico">&nbsp;</label>
-                                <input id="un" type="text" name="username" spellcheck="false" tabindex="1" class="ipt ipt_username gay_text" style="outline: none;" value="">
+                                <input id="un" type="text" name="username" spellcheck="false" tabindex="1"
+                                    class="ipt ipt_username gay_text" style="outline: none;" value="">
                             </div>
                             <div class="form_item">
                                 <label class="paswd_ico">&nbsp;</label>
                                 <!-- oncontextmenu 当用户在 <div> 元素 上右击鼠标时执行 -->
-                                <input id="pwd" type="password" oncopy="return false" onpaste="return false" oncut="return false" oncontextmenu="return false" name="password" tabindex="2" class="ipt ipt_password gay_text" placeholder="密码 " style="outline: none;">
+                                <input id="pwd" type="password" oncopy="return false" onpaste="return false"
+                                    oncut="return false" oncontextmenu="return false" name="password" tabindex="2"
+                                    class="ipt ipt_password gay_text" placeholder="密码 " style="outline: none;">
                             </div>
                             <div id="vcd_div" class="verify_code">
-
-                                <!-- 
-
-
-
-                                    写到这里了
-                                 -->
-                                <div class="form_item cur_right"></div>
+                                <div class="form_item cur_right fl">
+                                    <label class="verify_ico">&nbsp;</label>
+                                    <input id="vcd" type="text" name="validCode" value="验证码"
+                                        class="ipt ipt_code gay_text">
+                                    <span tabindex="-1" class="code_right" id="code_right"></span>
+                                    <span tabindex="-1" class="code_wrong" id="code_wrong"></span>
+                                </div>
+                                <a class="verify_code_box" href="#">
+                                    <img id="valid_code_pic" name="valid_code_pic">
+                                    <i tabindex="-1" class="btn_change">换一张</i>
+                                </a>
                             </div>
-                            <div class="auto_login"></div>
+                            <div class="auto_login">
+                                <p>
+                                    <input type="radio" id="check_agreement" class="uncheck_agreement" tabindex="3" value="">自动登录
+                                    <span id="agreement_tips" class="auto_tips">请勿在公用电脑上启用</span>
+                                </p>
+                                <p class="service_agreement">点击登录，表示您同意1号店
+                                    <a href="#" class="blue_link">《服务协议及隐私声明》</a>
+                                </p>
+                                <a href="#" class="forget_pswd" tabindex="-1">忘记密码？</a>
+                            </div>
+                            <input type="button" id="login_button" class="login_btn" value="登录">
                         </div>
-                        <div class="joint_landing_wrap"></div>
+                        <div class="joint_landing_wrap">
+                            <p>更多合作网站账号登录</p>
+                            <div>
+                                <ul class="account_list">
+                                    <li>
+                                        <a href="#" class="iconfont icon-qq fl" title="QQ"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="iconfont icon-jingdong- fl" title="京东"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="iconfont icon-weixin fl" title="微信"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="iconfont icon-weibo fl" title="新浪微博"></a>
+                                    </li>
+                                </ul>
+                                <a class="unfold fold fl">
+                                    更多合作网站
+                                    <i></i>
+                                </a>
+                            </div>
+                            <ul class="more_landing fl">
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-zhifubao"></i>
+                                        支付宝
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-wangyi"></i>
+                                        网易
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-baidu"></i>
+                                        百度
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-renren"></i>
+                                        人人网
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-dilanpinganjiansheai
+                                        "></i>
+                                        平安万里通
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-mogujie"></i>
+                                        蘑菇街
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="login_code">
+                    <div class="login_code_title fl">用<a href="#">1号店APP</a>登录</div>
+                    <div class="login_code_pic">
+                        <div class="picture_code" id="login_code_pic">
+                            <img src="imgs/er.png">
+                        </div>
+                        <div class="login_code_handle">
+                            <a href="#">刷新二维码</a>
+                        </div>
+                        <div class="login_switch">
+                            <em></em>
+                        </div>
                     </div>
                 </div>
             </div>

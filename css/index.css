@@ -378,7 +378,9 @@ body {
 
 #search-list {
     margin: 0 auto;
-    width: 600px;
+    width: 510px;
+    height: 400px;
+    overflow: hidden;
 }
 #search-list li {
     padding: 0 10px;

@@ -163,6 +163,10 @@ body {
     background-color: #fff;
 }
 
+.login_pc{
+    /* display: none; */
+}
+
 .error_tips {
     position: absolute;
     top: 9px;
@@ -240,11 +244,82 @@ body {
 }
 
 
+.cur_right {
+    position: relative;
+    z-index: 100;
+    height: 24px;
+    border: 1px solid #dedede;
+    background: #FFF;
+    line-height: 24px;
+    margin-bottom: 0;
+    padding: 14px 33px 14px 18px;
+}
+
+.verify_ico {
+    background: url(../imgs/login_new.png) no-repeat -100px 4px;
+}
+
+.verify_code .ipt {
+    width: 95px;
+}
+
 .verify_code {
     height: 52px;
     margin-bottom: 10px;
     padding: 0;
     border: 0 none;
+    display: none;
+}
+
+.code_right {
+    display: none;
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 30px;
+    height: 50px;
+    background: #FFF url(../imgs/regist.png) no-repeat 0 -27px;
+}
+
+.code_wrong {
+    display: none;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 30px;
+    height: 48px;
+    background: #FFF url(../imgs/regist.png) no-repeat 0 -80px;
+}
+
+.verify_code_box {
+    position: relative;
+    display: block;
+    float: right;
+    width: 123px;
+    height: 50px;
+    border: 1px solid #efefef;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.verify_code_box img {
+    width: 123px;
+    height: 50px;
+}
+
+.btn_change {
+    display: block;
+    width: 123px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    line-height: 50px;
+    text-align: center;
+    font-style: normal;
+    cursor: pointer;
 }
 
 .auto_login {
@@ -254,10 +329,216 @@ body {
     min-height: 24px;
 }
 
+.uncheck_agreement {
+    float: left;
+    margin-top: 6px;
+}
+
+.auto_tips {
+    float: left;
+    margin-left: 7px;
+    color: red;
+    display: none;
+}
+
+.service_agreement {
+    display: none;
+}
+
+.forget_pswd {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #999;
+}
+
+.login_btn {
+    width: 330px;
+    height: 52px;
+    border: 0 none;
+    border-radius: 3px;
+    background: #ff3c3c;
+    font-size: 16px;
+    color: #FFF;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #ff7373;
+    line-height: 52px;
+}
+
+.account_list {
+    float: left;
+    width: 230px;
+}
+
+.account_list li {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+.account_list a.iconfont {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.icon-qq {
+    color: #10a8ff;
+}
+
+.icon-jingdong- {
+    position: relative;
+    color: #c81825;
+}
+
+.icon-weixin {
+    color: #0c0;
+}
+
+.icon-weibo {
+    color: #dd2e37;
+}
+
+.unfold {
+    float: right;
+    display: block;
+    line-height: 34px;
+    color: #999;
+}
+
+.fold i {
+    background-position: -250px 3px;
+}
+
+.unfold i {
+    display: inline-block;
+    width: 20px;
+    height: 26px;
+    margin-top: 4px;
+    margin-left: 4px;
+    background: url(../imgs/login_new.png) no-repeat -200px 3px;
+    vertical-align: middle;
+}
+
+.more_landing {
+    margin-top: 15px;
+    display: none;
+}
+
+.more_landing li {
+    float: left;
+    width: 82px;
+    margin: 0 0 10px 0;
+    line-height: 16px;
+}
+
+.more_landing li a {
+    color: #999;
+    line-height: 16px;
+}
+
+.mod_login_wrap .more_landing li a i {
+    margin-right: 4px;
+}
+
+.icon-zhifubao {
+    color: #00b2ee;
+}
+
+.icon-wangyi {
+    color: #c4282b;
+}
+
+.icon-baidu {
+    color: #2932e1;
+}
+
+.icon-renren {
+    color: #005eac;
+}
+
+.icon-dilanpinganjiansheai {
+    color: #ff3204;
+}
+
+.icon-mogujie {
+    color: #e84478;
+}
+
 
 .joint_landing_wrap {
     position: relative;
     z-index: 10;
+}
+
+.joint_landing_wrap p {
+    padding: 15px 0;
+    color: #666;
+}
+
+.login_code {
+    display: none;
+    margin-top: 46px;
+}
+
+.login_code_title {
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: center;
+    width:330px;
+    height: 16px;
+}
+
+.login_code_title a {
+    display: inline-block;
+    color: #ff3c3c;
+}
+
+.login_code_pic {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 20px auto 0;
+    border: 1px solid #dedede;
+    z-index: 999;
+}
+
+.picture_code {
+    width: 180px;
+    height: 180px;
+}
+
+.login_code_handle {
+    padding: 20px 0 90px;
+    color: #666;
+    text-align: center;
+}
+
+.login_code_handle a {
+    display: inline-block;
+    color: #666;
+}
+
+.login_switch {
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+}
+
+.login_switch em {
+    display: inline-block;
+    position: absolute;
+    right: 18px;
+    bottom: 19px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 43px solid transparent;
+    border-right-color: #fff;
+    transform: rotate(46deg);
 }
 
 /* 底部 */
