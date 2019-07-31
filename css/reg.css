@@ -210,203 +210,6 @@ body {
     color: #333;
 }
 
-/* .regist_form{
-    
-}
-
-.regist_form ul{
-    
-}
-
-.regist_form ul li{
-    position: relative;
-    min-height: 52px;
-    margin-top: 10px;
-    margin-right: -200px;
-}
-
-.y_same_item{
-    position: relative;
-    z-index: 2;
-    width: 328px;
-    height: 50px;
-    border: 1px solid #dedede;
-    border-radius: 3px;
-}
-
-.ysame_input {
-    position: relative;
-    z-index: 2;
-    width: 288px;
-    height: 20px;
-    margin-top: 15px;
-    padding: 0px 20px;
-    background: 0;
-    border: 0;
-    outline: 0;
-    font-size: 14px;
-    line-height: 20px;
-    color: #666;
-}
-
-.y_same_label {
-    position: absolute;
-    left: 20px;
-    top: 0px;
-    display: inline-block;
-    height: 50px;
-    font-size: 14px;
-    line-height: 50px;
-    color: #666;
-}
-
-.regist_tips{
-    position: absolute;
-    left: 348px;
-    top:0;
-    opacity: 1;
-    font-size: 12px;
-    display: none;
-}
-
-.regtip_rel{
-    background: #fff4d7;
-    padding: 10px;
-}
-
-.regtip_rel i{
-    position: absolute;
-    left: -10px;
-    top: 50%;
-    z-index: 2;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    line-height: 0;
-    margin-top: -5px;
-    border-color: transparent #fff4d7 transparent transparent;
-    border-style: dashed solid dashed dashed;
-    border-width: 5px;
-    font-size: 0;
-}
-
-.tips_words{
-    max-width: 160px;
-    line-height: 20px;
-    color: #666;
-}
-
-.regist_right{
-    display: none;
-    position: absolute;
-    left: 348px;
-    top: 14px;
-    width: 23px;
-    height: 23px;
-    background: url(../imgs/regist_new.png) no-repeat -50px 0;
-}
-
-.same_item{
-    width: 192px;
-    height: 50px;
-    border: 1px solid #dedede;
-    border-radius: 3px;
-    position: relative;
-    z-index: 2;
-}
-
-.yzm_code{
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    width: 126px;
-    height: 52px;
-    margin-left: 10px;
-    border-radius: 2px;
-}
-
-.yzm_code img{
-    width: 124px;
-    height: 50px;
-    border: 1px solid #dedede;
-    border-radius: 2px;
-}
-
-.yzm_change{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    display: block;
-    width: 126px;
-    height: 52px;
-}
-
-.yzm_change em{
-    display: inline-block;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 126px;
-    height: 52px;
-    background-color: #000;
-    opacity: .5;
-}
-
-.yzm_change i{
-    display: inline-block;
-    position: relative;
-    z-index: 2;
-    width: 126px;
-    height: 52px;
-    text-align: center;
-    font-size: 14px;
-    line-height: 52px;
-    color: #fff;
-}
-
-#getYzmId{
-    position: relative;
-    z-index: 2;
-    width: 126px;
-    height: 50px;
-    margin-left: 10px;
-    text-align: center;
-    background-color: #57565f;
-    line-height: 52px;
-    color: #fff;
-    cursor: default;
-    border-radius: 2px;
-    font-size: 14px;
-}
-
-.agreement_word{
-    height: 35px;
-    font-size: 12px;
-    line-height: 35px;
-    color: #666;
-    text-indent: 1em;
-}
-
-.agreement_word a{
-    color: #06c;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-
-.agreement_btn{
-    display: block;
-    width: 330px;
-    height: 52px;
-    margin-top: 6px;
-    background-color: #ff3c3c;
-    font-size: 16px;
-    line-height: 52px;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-}  */
-
 /* 表单 */
 
 .y_same_item {
@@ -482,6 +285,61 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
+}
+
+.message{
+    position: relative;
+    z-index: 2;
+    width: 160px;
+    height: 50px;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+#getMessage{
+    display: block;
+    width: 160px;
+    height: 52px;
+    margin-top: 6px;
+    background-color: #57565f;
+    font-size: 16px;
+    line-height: 52px;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    position: absolute;
+    left:170px;
+    top:-8px;
+}
+
+
+
+#btn{
+    display: block;
+    width: 330px;
+    height: 52px;
+    margin-top: 6px;
+    background-color: #ff3c3c;
+    font-size: 16px;
+    line-height: 52px;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.agreement_word{
+    height: 35px;
+    font-size: 12px;
+    line-height: 35px;
+    color: #666;
+    text-indent: 1em;
+}
+
+.agreement_word a{
+    color: #06c;
+    text-decoration: none;
+    font-size: 12px;
 }
 
 #simplefooter {

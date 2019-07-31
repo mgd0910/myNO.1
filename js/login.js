@@ -62,3 +62,23 @@ $("#pwd").focus(function () {
     $(this).css({"color":"#000","font-size":"18px"});
 });
 
+
+/* 
+cookie保存
+*/
+$("#login_button").click(function (e) { 
+    saveCookie("username",$$("#un").value,7);
+    saveCookie("userpass",$$("#pwd").value,7);
+    // alert("登录成功");
+    location.href="index.html";
+});
+
+function $$(str) {
+    if (str.charAt(0) == "#") {
+        return document.getElementById(str.substring(1));
+    } else if (str.charAt(0) == ".") {
+        return document.getElementsByClassName(str.substring(1));
+    } else {
+        return document.getElementsByTagName(str);
+    }
+}

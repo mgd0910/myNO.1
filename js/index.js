@@ -34,6 +34,8 @@ window.onload = function () {
     souSuo();
 
     overOrout();
+
+    cookie();
 }
 
 
@@ -1601,6 +1603,21 @@ function souSuo(){
     spanDom.innerHTML="购物车";
     divdom3.appendChild(spanDom);
 }
+
+
+//cookie获取
+function cookie(){
+    let username = getCookie("username");
+    if (username) {
+        // console.log($$(".hd_login_name"));
+        $$("#hd_login_name").innerHTML = username;
+        $$("#loginSucId").style.display = "block";
+        $$("#global_unlogin").style.display = "none";
+    } else {
+        $$("#global_unlogin").style.display = "block";
+    }
+}   
+
 
 function $$(str) {
     if (str.charAt(0) == "#") {

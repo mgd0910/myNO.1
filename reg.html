@@ -136,35 +136,46 @@
            
 
 
-                <div class="y_same_item">
-                    <span class="user">用户名</span>
-                    <input id="username" type="text" class="txt" name="username">
-                    <span class="tishi">*必填，6-16位数字、字母组合，且以字母开头</span>
-                    <i></i>
-                </div>
-            <!-- <br><br> -->
-                <div class="y_same_item">
-                    <span class="user">手机号</span>
-                    <input id="userphone" type="text" class="txt" name="userphone">
-                    <i></i>
-                    <span class="tishi">*必填，11位纯数字</span>
-                </div>
-            <!-- <br><br> -->
-                <div class="y_same_item">
-                    <span class="user">设置密码</span>
-                    <input id="userpass" type="password" class="txt" name="userpass">
-                    <i></i>
-                    <span class="tishi">*必填，6-16个字母、数字组合，不能为纯数字</span>
-                </div>
-            <!-- <br><br> -->
-                <div class="y_same_item">
-                    <span class="user">确认密码</span>
-                    <input id="checkpass" type="password">
-                    <i></i>
-                    <span class="tishi">*必填，再次输入密码</span>
-                </div>
-            <!-- <br><br> -->
-            <input type="button" value="注册" onclick="regSave()" /><br>
+            <div class="y_same_item">
+                <span class="user">用户名</span>
+                <input id="username" type="text" class="txt" name="username">
+                <span class="tishi">*必填，6-16位数字、字母组合，且以字母开头</span>
+                <i></i>
+            </div>
+        <!-- <br><br> -->
+            <div class="y_same_item">
+                <span class="user">手机号</span>
+                <input id="userphone" type="text" class="txt" name="userphone">
+                <span class="tishi">*必填，11位纯数字</span>
+                <i></i>
+            </div>
+        <!-- <br><br> -->
+            <div class="y_same_item message">
+                <span class="user">短信验证码</span>
+                <input id="message" type="text">
+                <input id="getMessage" type="button" value="获取验证码">
+                <span class="tishi messageTishi">*必填，手机短信验证码</span>
+                <i></i>
+            </div>
+        <!-- <br><br> -->
+            <div class="y_same_item">
+                <span class="user">设置密码</span>
+                <input id="userpass" type="password" class="txt" name="userpass">
+                <span class="tishi">*必填，6-16个字母、数字组合，不能为纯数字</span>
+                <i></i>
+            </div>
+        <!-- <br><br> -->
+            <div class="y_same_item">
+                <span class="user">确认密码</span>
+                <input id="checkpass" type="password">
+                <span class="tishi">*必填，再次输入密码</span>
+                <i></i>
+            </div>
+        <!-- <br><br> -->
+            <div class="agreement_word">点击注册，表示您同意1号店
+                <a href="#">《服务协议及隐私声明》</a>
+            </div>
+            <input id="btn" type="button" value="注册" onclick="regSave()" /><br>
             <span id="msg"></span>
         </div>
     </div>
@@ -183,3 +194,5 @@
 </html>
 <script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/reg.js"></script>
+<script src="js/regTools.js"></script>
+<script src="js/regFormSql.js"></script>
