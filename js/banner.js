@@ -237,7 +237,9 @@ class BannerPlayer{
 			//二、改变外观（呈现）
 			domObjIn.style.opacity = currOpacity;
 			domObjOut.style.opacity = 1- currOpacity;
+			
 		},10);
 	}
 
 }
+

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, td, input, select, option, textarea { margin: 0; padding: 0; }
+
+ul, li { list-style-type: none; }
+
+a { text-decoration: none; }
+
+img { vertical-align: middle; }
+
+body { font-family: "微软雅黑"; font-size: 12px; }
+
+.fl { float: left; }
+
+.fr { float: right; }
+
+/* 头部 */
+.header { height: 30px; border-bottom: 1px solid #e5e5e5; background-color: #f4f4f4; line-height: 30px; }
+
+.header_wrap { margin: 0 auto; width: 1228px; height: 30px; }
+
+.hd_topbar_home { float: left; display: block; height: 30px; line-height: 30px; padding: 0 10px; border-left: 1px solid #f4f4f4; border-right: 1px solid #f4f4f4; color: #666; }
+
+.hd_topbar_home img { width: 14px; height: 14px; }
+
+.hd_topbar_home span { line-height: 30px; }
+
+.hd_topbar_right { color: #666; }
+
+.hd_topbar_right li { position: relative; z-index: 600; float: left; height: 30px; }
+
+.hd_unlogin { padding: 0 10px; }
+
+.hd_hi { color: #ff4040; }
+
+.hd_login_link { color: #ff4040; }
+
+.hd_regist_link { color: #aaa; }
+
+.hd_login { position: relative; z-index: 601; padding: 0 10px; border-left: 1px solid #f4f4f4; border-right: 1px solid #f4f4f4; }
+
+.hd_login_name { float: left; max-width: 156px; height: 30px; color: #636363; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+.hd_vip { float: left; margin: 6px 5px 0 5px; height: 18px; padding: 0 8px; border-radius: 9px; line-height: 18px; color: #fff; }
+
+.hd_user_privilege { position: absolute; top: 29px; left: 0px; display: none; width: 260px; padding: 15px; border: 1px solid #dbdbdb; background-color: #fff; }
+
+.hd_login_out { position: absolute; top: 0; right: 10px; color: #aaa; }
+
+.hd_menu { float: left; min-width: 66px; height: 30px; padding: 0 10px; border-left: 1px solid #f4f4f4; border-right: 1px solid #f4f4f4; }
+
+.hd_menu a { color: #666; }
+
+.hd_menu_list { position: absolute; top: 29px; left: 0px; display: none; width: 86px; padding: 5px 0; border: 1px solid #dbdbdb; border-top: 0 none; background-color: #fff; }
+
+.hd_menu_list a { display: block; padding: 0 0 0 10px; line-height: 26px; color: #666; }
+
+.hd_title { float: left; min-width: 66px; height: 30px; padding: 0 10px; border-left: 1px solid #f4f4f4; border-right: 1px solid #f4f4f4; }
+.hd_title a { color: #666; }
+
+.hd_qrcode_bg { position: absolute; top: 30px; left: -10px; display: none; padding: 15px 9px 9px; border: 1px solid #e5e5e5; background-color: #fff; }
+.hd_qrcode_bg .triangle { width: 0; height: 0; border-top: 0px; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #e5e5e5; position: absolute; top: -7px; left: 46px; }
+.hd_qrcode_bg p { text-align: center; line-height: 12px; margin-bottom: 7px; }
+.hd_qrcode_bg a img { width: 90px; height: 90px; }
+
+.yhd_cart_content { background: url(../imgs/bg1200.png) no-repeat top center fixed; }
+.yhd_cart_content .cart_header { width: 1200px; height: 60px; padding-top: 10px; margin: 0 auto; }
+.yhd_cart_content .cart_header h1 { float: left; }
+.yhd_cart_content .cart_header h1 .logo { float: left; padding-top: 17px; width: 40px; height: 28px; margin-right: 10px; background: url(../imgs/logo.png) no-repeat bottom; }
+.yhd_cart_content .cart_header h1 .logo_txt { float: left; padding-top: 8px; width: 73px; height: 40px; margin-right: 10px; background: url(../imgs/logo_txt.png) no-repeat 0 20px; }
+
+/*# sourceMappingURL=shopCar.css.map */
