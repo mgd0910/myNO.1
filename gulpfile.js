@@ -104,97 +104,99 @@ gulp.task("watchall", async () => {
     // });
 });
 
-//同时拷贝两个文件夹,拷贝到dist文件夹下的data中
-gulp.task("data", async () => {
-    gulp.src(["xml/*.xml", "json/*.json"])
-        .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\data"));
-});
 
-//拷贝文件时过滤文件,在json文件中新建一个json为test.json
-gulp.task("data", async () => {
-    gulp.src(["xml/*.xml", "json/*.json", "!json/test.json"])
-        .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\data"));
-});
 
-// 如何将以上命令一次性执行，采用bulid命令
-gulp.task("bulid",async () => {
-   gulp.src("Number1/**/*").pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One"));
-    console.log("ok");
-});
-
-//合并文件
-let concat = require('gulp-concat');
-// gulp.task("concatfile", async () => {
-//     gulp.src(['js/index.js', 'js/goods.js'])
-//         .pipe(concat('tools.js'))
-// .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"));
+// //同时拷贝两个文件夹,拷贝到dist文件夹下的data中
+// gulp.task("data", async () => {
+//     gulp.src(["xml/*.xml", "json/*.json"])
+//         .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\data"));
 // });
 
-//压缩文件
-let uglify = require('gulp-uglify');
-// 合并并且压缩
-
-// gulp.task("concatanduglify", async () => {
-
-//     gulp.src(['js/index.js', 'js/goods.js'])
-//         .pipe(concat('tools.js'))
-//         .pipe(uglify())
-// .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"));
+// //拷贝文件时过滤文件,在json文件中新建一个json为test.json
+// gulp.task("data", async () => {
+//     gulp.src(["xml/*.xml", "json/*.json", "!json/test.json"])
+//         .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\data"));
 // });
 
-
-// 合并并且压缩,重新起名字
-let rename = require('gulp-rename');
-// gulp.task("concatanduglifyandrename",async ()=>{
-// 	gulp.src(['js/index.js','js/goods.js'])
-// 	.pipe(concat('tools.js'))
-// 	.pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"))
-// 	.pipe(uglify())
-// 	.pipe(rename('tools.min.js'))
-// 	.pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"));
+// // 如何将以上命令一次性执行，采用bulid命令
+// gulp.task("bulid",async () => {
+//    gulp.src("Number1/**/*").pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One"));
+//     console.log("ok");
 // });
 
-// 压缩css
-let mincss = require('gulp-minify-css');
-// gulp.task("minifycss",async ()=>{
-// 	gulp.src("css/*.css")
-// 	.pipe(mincss())
-// 	.pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\css"));
+// //合并文件
+// let concat = require('gulp-concat');
+// // gulp.task("concatfile", async () => {
+// //     gulp.src(['js/index.js', 'js/goods.js'])
+// //         .pipe(concat('tools.js'))
+// // .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"));
+// // });
+
+// //压缩文件
+// let uglify = require('gulp-uglify');
+// // 合并并且压缩
+
+// // gulp.task("concatanduglify", async () => {
+
+// //     gulp.src(['js/index.js', 'js/goods.js'])
+// //         .pipe(concat('tools.js'))
+// //         .pipe(uglify())
+// // .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"));
+// // });
+
+
+// // 合并并且压缩,重新起名字
+// let rename = require('gulp-rename');
+// // gulp.task("concatanduglifyandrename",async ()=>{
+// // 	gulp.src(['js/index.js','js/goods.js'])
+// // 	.pipe(concat('tools.js'))
+// // 	.pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"))
+// // 	.pipe(uglify())
+// // 	.pipe(rename('tools.min.js'))
+// // 	.pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"));
+// // });
+
+// // 压缩css
+// let mincss = require('gulp-minify-css');
+// // gulp.task("minifycss",async ()=>{
+// // 	gulp.src("css/*.css")
+// // 	.pipe(mincss())
+// // 	.pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\css"));
+// // });
+
+// //压缩图片
+// let minimg = require('gulp-imagemin');
+// // gulp.task("minimg",async ()=>{
+// // 	gulp.src("img/*.{jpg,png}")
+// // 	.pipe(minimg())
+// // 	.pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\img"));
+// // });
+
+// gulp.task("watchallTo", async () => {
+//     gulp.watch('*.html', async () => {
+//         gulp.src('*.html')
+//             .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One"));
+//     })
+
+//     gulp.watch(['js/index.js', 'js/goods.js'], async () => {
+//         gulp.src(['js/index.js', 'js/goods.js'])
+//             .pipe(concat('tools.js'))
+//             .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"))
+//             .pipe(uglify())
+//             .pipe(rename('tools.min.js'))
+//             .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"));
+//     });
+
+//     gulp.watch("css/*.css", async () => {
+//         gulp.src("css/*.css")
+//             .pipe(mincss())
+//             .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\css"));
+//     })
+
+//     gulp.watch("img/*.{jpg,png}", async () => {
+//         gulp.src("img/*.{jpg,png}")
+//             .pipe(minimg())
+//             .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\img"));
+//     })
+
 // });
-
-//压缩图片
-let minimg = require('gulp-imagemin');
-// gulp.task("minimg",async ()=>{
-// 	gulp.src("img/*.{jpg,png}")
-// 	.pipe(minimg())
-// 	.pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\img"));
-// });
-
-gulp.task("watchallTo", async () => {
-    gulp.watch('*.html', async () => {
-        gulp.src('*.html')
-            .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One"));
-    })
-
-    gulp.watch(['js/index.js', 'js/goods.js'], async () => {
-        gulp.src(['js/index.js', 'js/goods.js'])
-            .pipe(concat('tools.js'))
-            .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"))
-            .pipe(uglify())
-            .pipe(rename('tools.min.js'))
-            .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\js"));
-    });
-
-    gulp.watch("css/*.css", async () => {
-        gulp.src("css/*.css")
-            .pipe(mincss())
-            .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\css"));
-    })
-
-    gulp.watch("img/*.{jpg,png}", async () => {
-        gulp.src("img/*.{jpg,png}")
-            .pipe(minimg())
-            .pipe(gulp.dest("E:\\phpStudy\\WWW\\Web1905\\One\\img"));
-    })
-
-});

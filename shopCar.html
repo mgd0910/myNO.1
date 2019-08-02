@@ -122,7 +122,11 @@
                     </div>
                     <span class="tit">商品信息</span>
                     <span class="price">单价（元）</span>
+                    <span class="num">数量</span>
+                    <span class="total">小计</span>
+                    <span class="act">操作</span>
                 </div>
+                <!-- 动态创建商品信息 -->
                 <div class="cart_list">
 
                 </div>
@@ -130,6 +134,28 @@
         </div>
         <!-- 商品展示end -->
     </div>
+
+    <!-- 结算 start -->
+    <div id="checkOutBar" class="settling_column_bar">
+        <div class="pay_tools_bar">
+            <div class="pay_tools_inner">
+                <div class="pay_tools_l">
+                    <span class="select_all">
+                        <input type="checkbox" id="checkAll">
+                        <label class="all_checked_label">全选（共<b>1</b>件）</label>
+                    </span>
+                    |
+                    <span>
+                        <a class="l_a_tool lt_delete" href="#">批量删除</a>
+                    </span>
+                </div>
+                <div class="pay_tools_r">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 结算 end -->
 </body>
 
 </html>
