@@ -86,11 +86,54 @@
                 <a href="index.html" class="logo"></a>
                 <a href="javascript:;" class="logo_txt"></a>
             </h1>
+            <!-- 三级地址选择 start-->
+            <div class="area_wrapper">
+                <span class="area_txt">配送至：</span>
+                <div class="area_select">
+                    <div id="city_2">
+                        <select class="prov"></select>
+                        <select class="city" disabled="disabled"></select>
+                        <select class="dist" disabled="disabled"></select>
+                    </div>
+                </div>
+            </div>
+            <!-- 三级地址选择 end-->
+
+            <!-- 搜索框 start -->
+            <div class="search">
+                <input id="keyword" type="text" placeholder="请输入关键词">
+                <input id="sousuoId" type="button">
+            </div>
+            <!-- 搜索框 end -->
         </div>
+
+        <!-- 空车提示 -->
+        <div class="top_tip">
+            <p></p>
+        </div>
+
+        <!-- 商品展示start -->
+        <div id="cart_main_body">
+            <div class="wrap">
+                <div class="cart_list_header">
+                    <div class="checkbox">
+                        <input type="checkbox" id="checkAll" class="check_all">
+                        全选
+                    </div>
+                    <span class="tit">商品信息</span>
+                    <span class="price">单价（元）</span>
+                </div>
+                <div class="cart_list">
+
+                </div>
+            </div>
+        </div>
+        <!-- 商品展示end -->
     </div>
 </body>
 
 </html>
 <script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.cityselect.js"></script>
 <script src="js/cookieTools.js"></script>
 <script src="js/shopCar.js"></script>

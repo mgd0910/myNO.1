@@ -44,3 +44,12 @@ $(function(){
     );
 })
 
+
+//省市联动
+$(function () {
+    $("#city_2").citySelect({
+        prov: "北京",
+        nodata: "none"
+    });
+})
+
