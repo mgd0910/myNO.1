@@ -463,7 +463,368 @@ body {
                 width: 600px;
                 height: 60px;
                 line-height: 60px;
+
+                .r_prod_view {
+                    position: relative;
+                    float: right;
+                    height: 60px;
+                    font-size: 16px;
+                    color: #dedede;
+
+                    .rpv_count {
+                        font-size: 12px;
+                        color: #333;
+
+                        b {
+                            margin: 0px 2px;
+                            color: #ff5e5e;
+                            font-family: 'Tahoma';
+                        }
+                    }
+
+                    a {
+                        padding-right: 10px;
+                        font-size: 12px;
+                        color: #999;
+                    }
+
+                    .add_tip {
+                        top: 47px;
+                        left: 40px;
+                        font-size: 12px;
+                        display: none;
+                        position: absolute;
+                        right: 40px;
+                        height: 35px;
+                        width: auto;
+                        min-width: 120px;
+                        border-radius: 2px;
+                        text-align: center;
+                        line-height: 35px;
+                        background-color: #ff8c8c;
+                        color: #fff;
+
+                        span {
+                            top: -3px;
+                            left: 10px;
+                            border-style: dashed dashed solid dashed;
+                            border-color: transparent transparent #ff8c8c transparent;
+                            position: absolute;
+                            right: -8px;
+                            margin-top: -4px;
+                            width: 0;
+                            height: 0;
+                            border-width: 4px;
+                            overflow: hidden;
+                        }
+                    }
+                }
+
+                .r_price_total {
+                    position: relative;
+                    float: right;
+                    height: 60px;
+                    padding-right: 20px;
+                    margin: -3px 15px 0 15px;
+                    font-size: 13px;
+                    overflow: hidden;
+
+                    .rpt_count {
+                        position: relative;
+                        top: 1px;
+                        font-size: 16px;
+                        color: #ff5e5e;
+                        font-weight: bold;
+
+                        b {
+                            margin-left: 2px;
+                            font-size: 22px;
+                            font-family: 'Century Gothic', 'microsoft yahei', 'Tahoma';
+                        }
+                    }
+                }
+
+                .checkout_btn {
+                    float: right;
+                    display: inline-block;
+                    width: 110px;
+                    text-align: center;
+                    background-color: #ff6c6c;
+                    font-family: 'microsoft yahei';
+                    font-weight: bold;
+                    font-size: 17px;
+                    color: #fff;
+                }
             }
         }
     }
 }
+
+
+.bottom_wrap {
+    width: 100%;
+    min-width: 1200px;
+    padding-top: 20px;
+    background-color: #f8f8fa;
+
+    .sale_prod_list {
+        width: 1200px;
+        margin: 20px auto 0;
+
+        .sale_prod_tit {
+            .hot_sale_tit {
+                height: 40px;
+                padding-right: 10px;
+                line-height: 40px;
+                color: #ff9841;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            p {
+                line-height: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                color: #999;
+            }
+        }
+    }
+
+    .cheap_prod {
+        padding: 40px 80px 10px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        width: 1040px;
+        border: 1px solid #f0f0f0;
+        border-radius: 2px;
+        background: #fff;
+        overflow: hidden;
+        position: relative;
+
+        .left_arrow {
+            left: 14px;
+            width: 30px;
+            height: 44px;
+            margin-top: -22px;
+            line-height: 44px;
+            text-align: center;
+            color: #cdcdcd;
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            overflow: hidden;
+            z-index: 8;
+
+            span {
+                font-size: 24px;
+                margin-left: -6px;
+            }
+        }
+
+        .right_arrow {
+            right: 14px;
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            overflow: hidden;
+            z-index: 8;
+            width: 30px;
+            height: 44px;
+            margin-top: -22px;
+            line-height: 44px;
+            text-align: center;
+            color: #cdcdcd;
+
+            span {
+                color: #e5e5e5;
+                cursor: default;
+                font-size: 24px;
+                margin-left: -6px;
+            }
+        }
+
+        .sale_scroll_box {
+            position: relative;
+            width: 1040px;
+            overflow: hidden;
+        }
+
+        .view_dot {
+            position: absolute;
+            left: 0px;
+            bottom: 16px;
+            z-index: 9;
+            width: 100%;
+            height: 20px;
+            margin: 0 auto;
+            text-align: center;
+
+            span {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin: 5px;
+                text-align: center;
+                background-color: #e5e5e5;
+                cursor: pointer;
+                border-radius: 20px;
+            }
+
+            .cur {
+                width: 18px;
+                background-color: #ff5e5e;
+            }
+        }
+    }
+}
+
+
+
+
+
+/* 底部 */
+.ft_wrap{
+    background: #fff;
+}
+
+.ft_footer{
+    margin: 0 auto;
+    width: 1070px;
+    height: 66px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.ft_footer a{
+    float: left;
+    display: block;
+    width: 205px;
+    height: 66px;
+    overflow: hidden;
+    margin: 0 51px;
+    margin-right: 81px;
+    margin-left: 0px;
+    cursor: default;
+}
+.ft_footer a:nth-child(4){
+    margin-right: 0px;
+}
+
+.ft_footer a img {
+    float: left;
+    display: block;
+    width: 66px;
+    height: 66px;
+    margin-right: 15px;
+}
+
+.ft_footer a b {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.ft_footer a span {
+    font-size: 14px;
+    color: #999;
+    line-height: 26px;
+}
+
+.ft_service{
+    margin: 0 auto;
+    width: 1070px;
+    padding: 20px 0 20px;
+    overflow: hidden;
+}
+
+#bottomHelpLinkId{
+    float: left;
+    padding-left: 15px;
+}
+
+#bottomHelpLinkId dl {
+    float: left;
+    display: block;
+    width: 195px;
+}
+
+#bottomHelpLinkId dl dt {
+    height: 32px;
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 32px;
+    overflow: hidden;
+    color: #666;
+    font-weight: bold;
+}
+
+#bottomHelpLinkId dl dd {
+    height: 24px;
+    padding: 0 8px;
+    line-height: 24px;
+    overflow: hidden;
+    white-space: normal;
+    font-size: 12px;
+}
+
+#bottomHelpLinkId dl dd a {
+    color: #666;
+}
+
+#bottomHelpLinkId dl dd a:hover{
+    color: #f3444d;
+}
+
+
+#footerQRcode{
+    width: 280px;
+    overflow: hidden;
+    float: left;
+    margin-right: -50px;
+}
+
+.mobile_code{
+    float: left;
+    margin-right: 50px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+.mobile_code img{
+    width: 90px;
+    height: 90px;
+}
+
+#footer p {
+    color: #666;
+    text-align: center;
+    text-indent: 0;
+    line-height: 100%;
+    margin: 15px 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.ft_footer_link a {
+    color: #333;
+    margin: 0px 3px;
+}
+.ft_footer_link a:hover{
+    color: #f3444d;
+}
+
+.ft_pic_link {
+    display: block;
+    padding: 10px 0 20px;
+    text-align: center;
+    font-size: 0;
+}
+
+.ft_pic_link a {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+
