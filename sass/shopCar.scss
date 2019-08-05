@@ -28,6 +28,7 @@ li {
 
 a {
     text-decoration: none;
+    color: #000;
 }
 
 img {
@@ -45,6 +46,22 @@ body {
 
 .fr {
     float: right;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    border: 1px solid #b8b8b8;
+    margin-left: 10px;
+    border-radius: 1px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
 }
 
 /* 头部 */
@@ -340,7 +357,7 @@ body {
         }
     }
 
-    .wrap {
+    /*  .wrap {
         width: 1200px;
         margin: 0 auto;
 
@@ -393,11 +410,318 @@ body {
             border-radius: 3px;
             margin-top: 20px;
         }
+    } */
+
+
+
+    .cartMain {
+        position: relative;
+        width: 1200px;
+        min-width: 1200px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0px 0px 100px;
+        min-height: 210px;
+
+        .cartMain_hd {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            color: #3c3c3c;
+
+            .order_lists {
+                width: 100%;
+                height: 50px;
+
+                li {
+                    float: left;
+                    height: 100%;
+                }
+
+                .list_chk {
+                    width: 80px;
+                    text-indent: 30px;
+                    position: relative;
+
+                    .list_chk input[type="checkbox"] {
+                        position: absolute;
+                        z-index: 0;
+                        left: -20px;
+                        top: -20px;
+                    }
+
+                    label {
+                        position: absolute;
+                        left: 10px;
+                        top: 19px;
+                        margin: 0;
+                    }
+                }
+
+                .list_con {
+                    text-indent: 140px;
+                    width: 312px;
+                }
+
+                .list_info {
+                    padding: 0;
+                    text-indent: 15px;
+                    width: 252px;
+                    box-sizing: border-box;
+                }
+
+                .list_price {
+                    width: 130px;
+                }
+
+                .list_amount {
+                    width: 120px;
+                }
+
+                .list_sum {
+                    width: 140px;
+                }
+
+                .list_op {
+                    width: 164px;
+                }
+            }
+
+            .order_lists:last-child {
+                border-bottom: none;
+            }
+
+        }
+
+        #goodsId {
+            width: 100%;
+            margin-bottom: 15px;
+
+            .cartBox {
+                width: 100%;
+                margin-bottom: 15px;
+                padding-bottom: 130px;
+
+                .shop_info {
+                    position: relative;
+                    width: 100%;
+                    height: 38px;
+                    background-color: #fff;
+                    line-height: 38px;
+                    vertical-align: baseline;
+
+                    .all_check {
+                        position: relative;
+                        float: left;
+                        width: 30px;
+                        height: 38px;
+
+                        input[type="checkbox"] {
+                            position: absolute;
+                            z-index: 0;
+                            left: -20px;
+                            top: -20px;
+                        }
+
+                        .shop {
+                            position: absolute;
+                            top: 13px;
+                        }
+                    }
+
+                    .shop_name {
+                        float: left;
+                    }
+                }
+
+                .order_content {
+                    border: 1px solid #ccc;
+
+                    .order_lists {
+                        width: 100%;
+                        height: 130px;
+                        border-bottom: 1px solid #e7e7e7;
+                        float: left;
+
+                        li {
+                            float: left;
+                            height: 130px;
+                            line-height: 130px;
+                            display: inline-block;
+                        }
+
+                        .list_chk {
+                            position: relative;
+                            width: 50px;
+
+                            input[type="checkbox"] {
+                                position: absolute;
+                                z-index: 0;
+                                left: -20px;
+                                top: -20px;
+                            }
+
+                            label {
+                                margin: 20px 0 0 24px;
+                            }
+                        }
+
+                        .list_con {
+                            width: 342px;
+
+                            .list_img {
+                                width: 90px;
+                                height: 90px;
+                                margin-top: 20px;
+                                float: left;
+
+                                a {
+                                    display: block;
+                                }
+
+                                img {
+                                    width: 100%;
+                                    vertical-align: top;
+                                }
+                            }
+
+                            .list_text {
+                                margin: 20px 0 0 10px;
+                                line-height: 18px;
+                                width: 200px;
+                                float: left;
+                            }
+                        }
+
+                        .list_info {
+                            width: 252px;
+                            box-sizing: border-box;
+                            padding: 20px 0;
+
+                            p {
+                                color: #9c9c9c;
+                                line-height: 18px;
+                                margin-left: 15px;
+                            }
+                        }
+
+                        .list_price {
+                            width: 130px;
+
+                            .price {
+                                margin-top: 20px;
+                                line-height: 18px;
+                                font-family: Verdana, Tahoma, arial;
+                                color: #3c3c3c;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .list_amount {
+                            width: 120px;
+
+                            .amount_box {
+                                margin-top: 20px;
+                                width: 77px;
+                                height: 25px;
+                                position: relative;
+
+                                a {
+                                    float: left;
+                                    height: 23px;
+                                    width: 17px;
+                                    border: 1px solid #e5e5e5;
+                                    background: #f0f0f0;
+                                    text-align: center;
+                                    line-height: 23px;
+                                    color: #444;
+                                    position: absolute;
+                                    top: 0;
+                                    display: block;
+                                }
+
+                                .reduce {
+                                    color: #cbcbcb;
+                                    left: 0;
+                                }
+
+                                input {
+                                    width: 39px;
+                                    height: 15px;
+                                    line-height: 15px;
+                                    border: 1px solid #aaa;
+                                    color: #343434;
+                                    text-align: center;
+                                    padding: 4px 0;
+                                    background-color: #fff;
+                                    z-index: 2;
+                                    position: absolute;
+                                    left: 18px;
+                                    float: left;
+                                }
+
+                                .plus {
+                                    border-left-color: transparent;
+                                    right: 0;
+                                }
+                            }
+                        }
+
+                        .list_sum {
+                            width: 140px;
+
+                            .sum_price {
+                                line-height: 18px;
+                                margin-top: 20px;
+                                font-family: Verdana, Tahoma, arial;
+                                color: #ff0000;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .list_op {
+                            width: 164px;
+
+                            .del {
+                                margin-top: 20px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .bar-wrapper {
+            width: 1200px;
+            height: 50px;
+            position: fixed;
+            bottom: -1px;
+            z-index: 99;
+            background: #e5e5e5;
+
+            .bar-right {
+                float: right;
+                color: #3c3c3c;
+
+                .piece {
+                    float: left;
+                    min-width: 110px;
+                    margin-right: 20px;
+                    height: 50px;
+                    line-height: 50px;
+                }
+            }
+        }
+
+
     }
+
 }
 
 // 结算 start
-.settling_column_bar {
+/* .settling_column_bar {
     position: relative;
     z-index: 333;
     height: 60px;
@@ -558,7 +882,7 @@ body {
         }
     }
 }
-
+ */
 
 .bottom_wrap {
     width: 100%;
@@ -681,11 +1005,11 @@ body {
 
 
 /* 底部 */
-.ft_wrap{
+.ft_wrap {
     background: #fff;
 }
 
-.ft_footer{
+.ft_footer {
     margin: 0 auto;
     width: 1070px;
     height: 66px;
@@ -693,7 +1017,7 @@ body {
     border-bottom: 1px solid #ebebeb;
 }
 
-.ft_footer a{
+.ft_footer a {
     float: left;
     display: block;
     width: 205px;
@@ -704,7 +1028,8 @@ body {
     margin-left: 0px;
     cursor: default;
 }
-.ft_footer a:nth-child(4){
+
+.ft_footer a:nth-child(4) {
     margin-right: 0px;
 }
 
@@ -729,14 +1054,14 @@ body {
     line-height: 26px;
 }
 
-.ft_service{
+.ft_service {
     margin: 0 auto;
     width: 1070px;
     padding: 20px 0 20px;
     overflow: hidden;
 }
 
-#bottomHelpLinkId{
+#bottomHelpLinkId {
     float: left;
     padding-left: 15px;
 }
@@ -770,19 +1095,19 @@ body {
     color: #666;
 }
 
-#bottomHelpLinkId dl dd a:hover{
+#bottomHelpLinkId dl dd a:hover {
     color: #f3444d;
 }
 
 
-#footerQRcode{
+#footerQRcode {
     width: 280px;
     overflow: hidden;
     float: left;
     margin-right: -50px;
 }
 
-.mobile_code{
+.mobile_code {
     float: left;
     margin-right: 50px;
     line-height: 32px;
@@ -790,7 +1115,8 @@ body {
     font-weight: bold;
     color: #666;
 }
-.mobile_code img{
+
+.mobile_code img {
     width: 90px;
     height: 90px;
 }
@@ -809,7 +1135,8 @@ body {
     color: #333;
     margin: 0px 3px;
 }
-.ft_footer_link a:hover{
+
+.ft_footer_link a:hover {
     color: #f3444d;
 }
 
@@ -824,5 +1151,3 @@ body {
     display: inline-block;
     margin: 0 4px;
 }
-
-

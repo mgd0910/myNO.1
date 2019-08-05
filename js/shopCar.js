@@ -82,6 +82,7 @@ $(document).ready(function () {
 
 
 
+
 //动态创建商品信息
 function goods() {
     let arr = [{
@@ -92,408 +93,192 @@ function goods() {
             "kg": "1.00kg",
             "shuoming": "1#亮闪闪金色"
         },
-        // {
-        //     "title": "乒艳礼品拼购专营店",
-        //     "imgsrc": "goods1.jpg",
-        //     "jieshao": "防珍珠锁骨链韩国choker项圈女颈带脖链网红脖子饰品短款颈链项链 1#亮闪闪金色 ",
-        //     "pic": "46.00",
-        //     "kg": "1.00kg",
-        //     "shuoming": "1#亮闪闪金色"
-        // }
+        {
+            "title": "自营",
+            "imgsrc": "goods2.jpg",
+            "jieshao": "    范思哲(VERSACE)晶钻女用香水 30ml (又名：范思哲(VERSACE)晶钻女士香水 30ml 香氛) 持久自然 ",
+            "pic": "   349.00    ",
+            "kg": "0.16kg",
+            "shuoming": "晶钻30ml"
+        },
+        {
+            "title": "自营",
+            "imgsrc": "goods2.jpg",
+            "jieshao": "    范思哲(VERSACE)晶钻女用香水 30ml (又名：范思哲(VERSACE)晶钻女士香水 30ml 香氛) 持久自然 ",
+            "pic": "   349.00    ",
+            "kg": "0.16kg",
+            "shuoming": "晶钻30ml"
+        }
     ];
 
-
-
     for (let i = 0; i < arr.length; i++) {
-        let cart_tit = $("<div>");
-        cart_tit.attr("class", "cart_tit");
-        cart_tit.css({
-            padding: "15px 30px",
-            height: "25px",
-            "border-bottom": "1px solid #dcdcdc",
-            "line-height": "25px"
-        })
-        $(".cart_list").append(cart_tit);
+        let cartBox = $("<div>");
+        cartBox.attr("class", "cartBox");
+        $("#goodsId").append(cartBox);
 
-        let checkbox = $("<div>");
-        checkbox.attr("class", "checkbox");
-        checkbox.css({
-            float: "left",
-            width: "auto"
-        });
-        $(".cart_tit").append(checkbox);
+        let shop_info = $("<div>");
+        shop_info.attr("class", "shop_info");
+        cartBox.append(shop_info);
 
-        let cheak = $('<input type="checkbox" id="checkId">');
-        cheak.css({
-            position: "relative",
-            display: "inline-block",
-            width: "13px",
-            height: "13px",
-            "margin-right": "20px",
-            border: "1px solid #dcdcdc",
-            "border-radius": "3px"
-        })
-        checkbox.append(cheak);
+        let all_check = $("<div>");
+        all_check.attr("class", "all_check");
+        shop_info.append(all_check);
 
-        let vender = $("<a>");
-        vender.attr("class", "vender");
-        vender.css({
-            float: 'left',
-            "vertical-align": "middle",
-            "font-size": "14px"
-        })
-        vender.href = "#";
-        // vender.html("乒艳礼品拼购专营店");
-        vender.html(arr[0].title);
-        $(".cart_tit").append(vender);
+        let shop_name = $("<div>");
+        shop_name.attr("class", "shop_name");
+        shop_name.html("店铺:");
+        shop_info.append(shop_name);
+
+        let dp = $("<a>");
+        dp.attr("href", "#");
+        dp.html(arr[0].title);
+        shop_name.append(dp);
+
+        let shopChoice = $('<input type="checkbox" id="shop_a" class="shopChoice">');
+        all_check.append(shopChoice);
+
+        let shop = $("<label>");
+        shop.attr("class", "shop");
+        all_check.append(shop);
 
 
-        let service = $("<a>");
-        service.attr("class", "service");
-        service.css({
-            float: "left",
-            margin: "5px 0 4px 3px",
-            width: "16px",
-            height: "16px",
-            background: "url(imgs/sprite.png) 0 -25px"
-        });
-        service.href = "#";
-        $(".cart_tit").append(service);
+        let order_content = $("<div>");
+        order_content.attr("class", "order_content");
+        cartBox.append(order_content);
 
-        let list_wrap = $("<div>");
-        list_wrap.attr("class", "list_wrap");
-        list_wrap.css({
-            padding: "0 30px"
-        });
-        $(".cart_list").append(list_wrap);
+        let order_lists = $("<ul>");
+        order_lists.attr("class", "order_lists");
+        order_content.append(order_lists);
 
-        let cart_item = $("<ul>");
-        cart_item.attr("class", "cart_item");
-        cart_item.css({
-            "border-top": "0",
-        })
-        $(".list_wrap").append(cart_item);
+        let list_chk = $("<li>");
+        list_chk.attr("class", "list_chk");
+        order_lists.append(list_chk);
 
-        let liDom = $("<li>");
-        liDom.attr("class", "item");
-        liDom.css({
-            margin: "0 -30px",
-            padding: "0 30px",
-            "background-color": "#fff"
-        })
-        $(".cart_item").append(liDom);
+        let son_check = $('<input type="checkbox" id="checkbox_2" class="son_check">');
+        list_chk.append(son_check);
 
-        let cart_prod = $("<div>");
-        cart_prod.attr("class", "cart_prod");
-        cart_prod.css({
-            position: "relative",
-            padding: "20px 0 20px 35px",
-            "min-height": "75px"
-        })
-        $(".item").append(cart_prod);
+        let label1 = $('<label for="checkbox_2"></label>');
+        list_chk.append(label1);
 
-        let cheakDan = $('<input type="checkbox">');
-        cheakDan.css({
-            left: "0",
-            position: "absolute",
-            top: "50%",
-            "margin-top": "-7px",
-            "z-index": "1",
-            float: "left"
-        })
-        $(".cart_prod").append(cheakDan);
 
-        let item_pic = document.createElement("a");
-        item_pic.style.cssText = `
-        position: relative;
-        z-index: 3;
-        width:75px;
-        height:75px;
-        display:block;
-        background:red;
-        float:left;
-        color:#333;
-    `;
-        item_pic.href = "#";
-        $(".cart_prod").append(item_pic);
 
-        let imgDom = document.createElement("img");
-        imgDom.src = "imgs/" + arr[0].imgsrc;
-        item_pic.append(imgDom);
+        let list_con = $("<li>");
+        list_con.attr("class", "list_con");
+        order_lists.append(list_con);
 
-        let item_tit = document.createElement("a");
-        item_tit.style.cssText = `
-        float: left;
-        width: 260px;
-        height: 40px;
-        padding-top: 4px;
-        padding-left: 20px;
-        line-height: 20px;
-        overflow: hidden;
-        dispaly:block;
-        float:left;
-        color:#333;
-    `;
-        // item_tit.innerHTML = "防珍珠锁骨链韩国choker项圈女颈带脖链网红脖子饰品短款颈链项链 1#亮闪闪金色 ";
-        item_tit.innerHTML = arr[0].jieshao;
-        item_tit.href = "#";
-        $(".cart_prod").append(item_tit);
+        let list_img = $("<div>");
+        list_img.attr("class", "list_img");
+        list_con.append(list_img);
 
-        // 单价及价格标签
-        let item_price = $("<div>");
-        item_price.attr("class", "item_price");
-        item_price.css({
-            position: "relative",
-            float: "left",
-            width: "200px",
-            "padding-top": "2px",
-            "padding-right": "5px",
-            "line-height": "24px",
-            "text-align": "right"
-        })
-        $(".cart_prod").append(item_price);
+        let a1 = $("<a>");
+        a1.attr("href", "#");
+        list_img.append(a1);
+
+        let img1 = document.createElement("img");
+        img1.src = "imgs/" + arr[0].imgsrc;
+        a1.append(img1);
+
+        let list_text = $("<div>");
+        list_text.attr("class", "list_text");
+        list_con.append(list_text);
+
+        let a2 = $("<a>");
+        a2.attr("href", "#");
+        a2.html(arr[0].jieshao);
+        list_text.append(a2);
+
+        let list_info = $("<li>");
+        list_info.attr("class", "list_info");
+        order_lists.append(list_info);
+
+        let p1 = $("<p>");
+        p1.html("规格：默认");
+        list_info.append(p1);
+
+        let p2 = $("<p>");
+        p2.html(arr[0].shuoming);
+        list_info.append(p2);
+
+        let list_price = $("<li>");
+        list_price.attr("class", "list_price");
+        order_lists.append(list_price);
 
         let price = $("<p>");
-        price.attr("id", "price");
-        // price.html("46.00");
-        price.html(arr[0].pic);
-        $(".item_price").append(price);
+        price.attr("class", "price");
+        price.html("￥" + arr[0].pic);
+        list_price.append(price);
 
-        //数量
-        let item_num = $("<div>");
-        item_num.attr("class", "item_num");
-        item_num.css({
-            position: "relative",
-            float: "left",
-            width: "205px"
-        })
-        $(".cart_prod").append(item_num);
+        let list_amount = $("<li>");
+        list_amount.attr("class", "list_amount");
+        order_lists.append(list_amount);
 
-        let num_act = $("<div>");
-        num_act.attr("class", "num_act");
-        num_act.css({
-            float: "right",
-            padding: "3px 0",
-            width: "80px",
-            height: "18px",
-            "line-height": "18px",
-            border: "1px solid #dfdfdf",
-            "border-radius": "2px",
-            "background-color": "#fff",
-            overflow: "hidden",
-        })
-        $(".item_num").append(num_act);
+        let amount_box = $("<div>");
+        amount_box.attr("class", "amount_box");
+        list_amount.append(amount_box);
 
-        let minus = $('<input type="button" value="-" id="minusId">');
-        minus.css({
-            color: "#dfdfdf",
-            float: "left",
-            width: "20px",
-            "text-align": "center",
-            "font-family": 'Tahoma',
-            "font-size": "14px",
-            overflow: "hidden",
-            outline: "none",
-            border: "none",
-            "background-color": "#fff"
-        })
-        $(".num_act").append(minus);
-
-        let item_amount = $("<div>");
-        item_amount.attr("class", "item_amount");
-        item_amount.css({
-            float: "left",
-            width: "120px",
-            "padding-left": "75px",
-            "padding-right": "60px",
-            "padding-top": "1px",
-            "text-align": "right",
-            "line-height": "24px",
-            "font-family": 'Tahoma',
-            "font-weight": "bold",
-            color: "#333"
-        })
-        $(".cart_prod").append(item_amount);
-
-        let item_a_money = $("<div>");
-        item_a_money.attr("class", "item_a_money");
-        item_a_money.html("  46.00  ")
-        $(".item_amount").append(item_a_money);
-
-        let item_a_weight = $("<div>");
-        item_a_weight.attr("class", "item_a_weight");
-        item_a_weight.css({
-            "line-height": "18px",
-            "font-weight": "normal",
-            color: "#666"
-        })
-        // item_a_weight.html("1.00kg");
-        item_a_weight.html(arr[0].kg);
-        $(".item_amount").append(item_a_weight);
-
-        let item_act = $("<div>");
-        item_act.attr("class", "item_act");
-        item_act.css({
-            position: "relative",
-            float: "left",
-            width: "80px",
-            "padding-top": "2px",
-            "line-height": "24px",
-            "text-align": "center"
-        })
-        $(".cart_prod").append(item_act);
-
-        let collect_btn = $("<a>");
-        collect_btn.attr("class", "collect_btn");
-        collect_btn.css({
-            padding: "0 3px",
-            width: "20px",
-            height: "20px"
-        })
-        $(".item_act").append(collect_btn);
-
-        let shoucang = $('<img src="imgs/3.gif">')
-        shoucang.css({
-            width: "20px",
-            height: "20px"
-        })
-        $(".collect_btn").append(shoucang);
-
-        let del_btn = $("<a>");
-        del_btn.attr("class", "del_btn");
-        del_btn.css({
-            padding: "0 3px",
-            width: "20px",
-            height: "20px"
-        })
-        $(".item_act").append(del_btn);
-
-        let shanchu = $('<img src="imgs/4.gif">')
-        shanchu.css({
-            width: "20px",
-            height: "20px"
-        })
-        $(".del_btn").append(shanchu);
-
-
-        let text = $('<input type="text" value="1" id="numId">');
-        text.css({
-            float: "left",
-            width: "38px",
-            height: "18px",
-            border: "none",
-            "border-left": "1px solid #dfdfdf",
-            "border-right": "1px solid #dfdfdf",
-            "text-align": "center",
-            "line-height": "18px",
-            "outline": "none"
-        })
-        $(".num_act").append(text);
-
-        let add = $('<input type="button" value="+" id="addId">');
-        add.css({
-            color: "#666",
-            float: "left",
-            width: "20px",
-            "text-align": "center",
-            "font-family": 'Tahoma',
-            "font-size": "14px",
-            overflow: "hidden",
-            outline: "none",
-            border: "none",
-            "background-color": "#fff"
-        })
-        $(".num_act").append(add);
-
-        let prop_edit = $("<div>");
-        prop_edit.attr("class", "prop_edit");
-        prop_edit.css({
-            top: "65px",
-            position: "absolute",
-            left: "132px"
-        })
-        $(".cart_prod").append(prop_edit);
-
-        let prop_server = $("<div>");
-        prop_server.attr("class", "prop_server");
-        prop_server.css({
-            position: "relative",
-            float: "left",
-            width: "16px",
-            height: "16px",
-            margin: "3px 3px 0 0",
-            "border-radius": "4px",
-            "background-color": "#fda55b",
-        })
-        $(".prop_edit").append(prop_server);
-
-        let seven = $('<img src="imgs/5.gif">');
-        seven.css({
-            width: "16px",
-            height: "16px"
-        })
-        $(".prop_server").append(seven);
-
-        let prop_txt = $("<div>");
-        prop_txt.attr("class", "prop_txt");
-        prop_txt.css({
-            "margin-left": "21px",
-            "min-width": "185px",
-            "max-width": "270px",
-            height: "20px",
-            "padding-left": "5px",
-            "padding-right": "10px",
-            border: "1px dashed #fff",
-            "line-height": "20px",
-            cursor: "pointer",
-            position: "relative",
-            "margin-bottom": "5px",
-            "float": "left"
-        })
-        $(".prop_edit").append(prop_txt);
-
-        let goodname = $("<span>");
-        goodname.attr("class", "goodname");
-        goodname.css({
-            "margin-right": "10px",
-            color: "#aaa"
-        })
-        goodname.html(arr[0].shuoming);
-        $(".prop_txt").append(goodname);
-
-
-        let cart_amount = $("<div>");
-        cart_amount.attr("class", "cart_amount");
-        cart_amount.css({
-            height: "50px",
-            "padding-right": "25px",
-            "border-top": "1px solid #dcdcdc",
-            "border-bottom-left-radius": "5px",
-            "border-bottom-right-radius": "5px",
-            "background-color": "#fefcfc",
-            "text-align": "right"
+        let reduce = $("<a>");
+        reduce.attr({
+            "class": "reduce",
+            "href": "#"
         });
-        $(".cart_list").append(cart_amount);
+        reduce.html("-")
+        amount_box.append(reduce);
 
-        let amount = $('<div class="amount">商品总价：</div>');
-        amount.css({
-            float: "right",
-            height: "50px",
-            "padding-left": "20px",
-            "line-height": "50px"
-        })
-        $(".cart_amount").append(amount);
+        let sum = $('<input type="text" value="1" class="sum">');
+        amount_box.append(sum);
 
-        let spanDom = $("<span></span>");
-        spanDom.attr("class", "heji");
-        spanDom.css({
-            color: "#ff5e5e",
-            "font-weight": "bold",
-            "font-size": "14px",
-            "font-family": 'Tahoma'
-        })
-        spanDom.html("46");
-        $(".amount").append(spanDom);
+        let plus = $("<a>");
+        plus.attr({
+            "class": "plus",
+            "href": "#"
+        });
+        plus.html("+")
+        amount_box.append(plus);
+
+        let list_sum = $("<li>");
+        list_sum.attr("class", "list_sum");
+        order_lists.append(list_sum);
+
+        let sum_price = $("<p>");
+        sum_price.attr("class", "sum_price");
+        sum_price.html("￥46.00");
+        list_sum.append(sum_price);
+
+
+        let list_op = $("<li>");
+        list_op.attr("class", "list_op");
+        order_lists.append(list_op);
+
+        let del = $("<p>");
+        del.attr("class", "del");
+        list_op.append(del);
+
+        let delBtn = $("<a>");
+        delBtn.attr({
+            "class": "delBtn",
+            "href": "#"
+        });
+        delBtn.html("移除商品");
+        del.append(delBtn);
     }
-
 }
+
+
+
+/* //全选或者取消
+jQuery.fn.extend({
+    checkAll: function (isChecked) {
+        this.attr("checked", isChecked);
+    }
+});
+
+$(function () {
+    $("#checkAll").click(function () {
+        $(".cart_list :checkbox").checkAll(this.checked);
+        $("#checkOutBar :checkbox").checkAll(this.checked);
+    });
+    $("#checkOutBar :checkbox").click(function () {
+        $(".cart_list :checkbox").checkAll(this.checked);
+        $("#checkAll").checkAll(this.checked);
+    });
+}); */
