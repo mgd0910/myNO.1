@@ -63,6 +63,10 @@ label {
   cursor: pointer;
 }
 
+.mark {
+  background: url("../imgs/mark1.png") no-repeat -1px -1px;
+}
+
 /* 头部 */
 .header {
   height: 30px;
@@ -627,8 +631,6 @@ label {
 .yhd_cart_content .cartMain .bar-wrapper {
   width: 1200px;
   height: 50px;
-  position: fixed;
-  bottom: -1px;
   z-index: 99;
   background: #e5e5e5;
 }
@@ -636,12 +638,115 @@ label {
   float: right;
   color: #3c3c3c;
 }
+.yhd_cart_content .cartMain .bar-wrapper .bar-right strong {
+  color: #f40;
+}
 .yhd_cart_content .cartMain .bar-wrapper .bar-right .piece {
   float: left;
   min-width: 110px;
   margin-right: 20px;
   height: 50px;
   line-height: 50px;
+}
+.yhd_cart_content .cartMain .bar-wrapper .bar-right .piece .piece_num {
+  display: inline-block;
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: tohoma, arial;
+}
+.yhd_cart_content .cartMain .bar-wrapper .bar-right .totalMoney {
+  float: left;
+  min-width: 100px;
+  height: 50px;
+  line-height: 50px;
+}
+.yhd_cart_content .cartMain .bar-wrapper .bar-right .totalMoney .total_text {
+  float: right;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: Arial;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+.yhd_cart_content .cartMain .bar-wrapper .bar-right .calBtn {
+  float: left;
+}
+.yhd_cart_content .cartMain .bar-wrapper .bar-right .calBtn a {
+  display: block;
+  width: 120px;
+  height: 50px;
+  color: #fff;
+  background: #B0B0B0;
+  cursor: not-allowed;
+  font-size: 22px;
+  letter-spacing: 5px;
+  text-decoration: none;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 2px;
+}
+.yhd_cart_content .model_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: none;
+}
+.yhd_cart_content .my_model {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -200px;
+  z-index: 9999;
+  width: 360px;
+  height: 120px;
+  border: 1px solid #aeaeae;
+  border-radius: 3px;
+  padding: 20px;
+  background: #fff;
+}
+.yhd_cart_content .my_model p {
+  line-height: 16px;
+}
+.yhd_cart_content .my_model .title {
+  font-size: 14px;
+  color: #3c3c3c;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.yhd_cart_content .my_model .title .closeModel {
+  float: right;
+  cursor: pointer;
+}
+.yhd_cart_content .my_model .opBtn {
+  margin-top: 20px;
+}
+.yhd_cart_content .my_model .opBtn a {
+  width: 58px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 1px;
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 700;
+}
+.yhd_cart_content .my_model .opBtn .dialog-sure {
+  background: #52a0e5;
+  color: #fff;
+  border: 1px solid #52a0e5;
+}
+.yhd_cart_content .my_model .opBtn .dialog-close {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  color: #3c3c3c;
 }
 
 /* .settling_column_bar {

@@ -87,23 +87,15 @@ $(document).ready(function () {
 function goods() {
     let arr = [{
             "title": "乒艳礼品拼购专营店",
-            "imgsrc": "goods1.jpg",
+            "imgsrc": "imgs/goods1.jpg",
             "jieshao": "防珍珠锁骨链韩国choker项圈女颈带脖链网红脖子饰品短款颈链项链 1#亮闪闪金色 ",
-            "pic": "46.00",
+            "pic": "   46.00    ",
             "kg": "1.00kg",
             "shuoming": "1#亮闪闪金色"
         },
         {
             "title": "自营",
-            "imgsrc": "goods2.jpg",
-            "jieshao": "    范思哲(VERSACE)晶钻女用香水 30ml (又名：范思哲(VERSACE)晶钻女士香水 30ml 香氛) 持久自然 ",
-            "pic": "   349.00    ",
-            "kg": "0.16kg",
-            "shuoming": "晶钻30ml"
-        },
-        {
-            "title": "自营",
-            "imgsrc": "goods2.jpg",
+            "imgsrc": "imgs/goods2.jpg",
             "jieshao": "    范思哲(VERSACE)晶钻女用香水 30ml (又名：范思哲(VERSACE)晶钻女士香水 30ml 香氛) 持久自然 ",
             "pic": "   349.00    ",
             "kg": "0.16kg",
@@ -131,14 +123,16 @@ function goods() {
 
         let dp = $("<a>");
         dp.attr("href", "#");
-        dp.html(arr[0].title);
+        dp.html(arr[i].title);
         shop_name.append(dp);
 
-        let shopChoice = $('<input type="checkbox" id="shop_a" class="shopChoice">');
+        let shopChoice = $('<input type="checkbox" class="shopChoice">');
+        let num = `shop_${i}`;
+        shopChoice.attr("id",num)
         all_check.append(shopChoice);
 
         let shop = $("<label>");
-        shop.attr("class", "shop");
+        shop.attr({"class":"shop","for":num});
         all_check.append(shop);
 
 
@@ -154,10 +148,13 @@ function goods() {
         list_chk.attr("class", "list_chk");
         order_lists.append(list_chk);
 
-        let son_check = $('<input type="checkbox" id="checkbox_2" class="son_check">');
+        let son_check = $('<input type="checkbox" class="son_check">');
+        let numb=`checkbox_${i+2}`;
+        son_check.attr("id",numb);
         list_chk.append(son_check);
 
-        let label1 = $('<label for="checkbox_2"></label>');
+        let label1 = $('<label>');
+        label1.attr("for",numb)
         list_chk.append(label1);
 
 
@@ -175,7 +172,7 @@ function goods() {
         list_img.append(a1);
 
         let img1 = document.createElement("img");
-        img1.src = "imgs/" + arr[0].imgsrc;
+        img1.src = arr[i].imgsrc;
         a1.append(img1);
 
         let list_text = $("<div>");
@@ -184,7 +181,7 @@ function goods() {
 
         let a2 = $("<a>");
         a2.attr("href", "#");
-        a2.html(arr[0].jieshao);
+        a2.html(arr[i].jieshao);
         list_text.append(a2);
 
         let list_info = $("<li>");
@@ -205,7 +202,7 @@ function goods() {
 
         let price = $("<p>");
         price.attr("class", "price");
-        price.html("￥" + arr[0].pic);
+        price.html("￥" + arr[i].pic);
         list_price.append(price);
 
         let list_amount = $("<li>");
@@ -241,7 +238,7 @@ function goods() {
 
         let sum_price = $("<p>");
         sum_price.attr("class", "sum_price");
-        sum_price.html("￥46.00");
+        sum_price.html(arr[i].pic);
         list_sum.append(sum_price);
 
 
@@ -262,6 +259,8 @@ function goods() {
         del.append(delBtn);
     }
 }
+
+
 
 
 
