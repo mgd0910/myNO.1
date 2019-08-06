@@ -83,7 +83,8 @@ $(document).ready(function () {
 
 //动态创建商品信息
 function goods() {
-    let arr = [{
+    let arr = [
+        {
             "title": "乒艳礼品拼购专营店",
             "imgsrc": "imgs/goods1.jpg",
             "jieshao": "防珍珠锁骨链韩国choker项圈女颈带脖链网红脖子饰品短款颈链项链 1#亮闪闪金色 ",
