@@ -2,6 +2,7 @@ $(document).ready(function () {
     category();
     overOrout();
     mirror();
+    change();
 });
 
 
@@ -133,8 +134,6 @@ function category() {
 }
 
 //左侧盒子
-
-
 function mirror() {
     let imgarr = [
         "imgs/Good1.jpg",
@@ -153,25 +152,28 @@ function mirror() {
     });
 
     for (let i = 1; i <= imgarr.length; i++) {
-        let bDom = document.createElement("b");
+        let bDom = $("<b>");
         $(".mBox").append(bDom);
 
         let imgDom = document.createElement("img");
         imgDom.src = imgarr[i - 1];
         bDom.append(imgDom);
-        bDom.onclick = () =>{
+        bDom.click(function (e) { 
             $("#jqzoom").css({
                 "background-image": "url(imgs/Good" + i + ".jpg)",
-                "background-repeat":" no-repeat",
+                "background-repeat": " no-repeat",
                 "background-size": "400px 400px"
             });
             $("#showBox").css({
                 "background-image": "url(imgs/Good" + i + ".jpg)",
-                "background-repeat":" no-repeat",
-                "background-position":" 0px 0px"
+                "background-repeat": " no-repeat",
+                "background-position": " 0px 0px",
+                "background-size": "1200px 1200px"
             });
-            $("#showBox").style.backgroundSize=`${$$("#jqzoom").offsetWidth*3}px ${$$("#jqzoom").offsetHeight*3}px`;
-        }
+            bDom.attr("class", "cur");
+            bDom.siblings().attr("class", " ");
+            
+        });
     }
 
     new Mirror({
@@ -179,7 +181,87 @@ function mirror() {
         width: 180,
         height: 150
     }, $$("#jqzoom"));
+
+   
+    //图片预览小图移动效果,页面加载时触发
+    $(function () {
+        var tempLength = 0; //临时变量,当前移动的长度
+        var viewNum = 4; //设置每次显示图片的个数量
+        var moveNum = 2; //每次移动的数量
+        var moveTime = 300; //移动速度,毫秒
+        var scrollDiv = $(".mBox"); //进行移动动画的容器
+        var scrollItems = $(".mBox b"); //移动容器里的集合
+        var moveLength = scrollItems.eq(0).width() * moveNum; //计算每次移动的长度
+        var countLength = (scrollItems.length - viewNum) * scrollItems.eq(0).width(); //计算总长度,总个数*单个长度
+        // console.log(scrollItems.length);  
+        //下一张
+        $("#cBtnR").bind("click", function () {
+            if (tempLength < countLength) {
+                if ((countLength - tempLength) > moveLength) {
+                    scrollDiv.animate({
+                        left: "-=" + moveLength + "px"
+                    }, moveTime);
+                    tempLength += moveLength;
+                } else {
+                    scrollDiv.animate({
+                        left: "-=" + (countLength - tempLength) + "px"
+                    }, moveTime);
+                    tempLength += (countLength - tempLength);
+                }
+            }
+        });
+        //上一张
+        $("#cBtnF").bind("click", function () {
+            if (tempLength > 0) {
+                if (tempLength > moveLength) {
+                    scrollDiv.animate({
+                        left: "+=" + moveLength + "px"
+                    }, moveTime);
+                    tempLength -= moveLength;
+                } else {
+                    scrollDiv.animate({
+                        left: "+=" + tempLength + "px"
+                    }, moveTime);
+                    tempLength = 0;
+                }
+            }
+        });
+    });
 }
+
+
+//选择
+function change(){
+    for(let i=0;i<4;i++){
+        let item=$("<div>");
+        item.attr("class","item");
+        $(".dd").append(item);
+
+        item.click(function (e) { 
+            item.attr("class","selected");
+            item.siblings().attr("class","");
+        });
+
+        let b=$("<b>");
+        item.append(b);
+
+       
+
+        let a=document.createElement("a");
+        a.href="#";
+        item.append(a);
+        
+        let img=document.createElement("img")
+        img.src=`imgs/small1.png`;
+        a.append(img);
+
+        let p=document.createElement("p");
+        p.innerHTML="蓝色";
+        a.append(p);
+    }
+}
+
+
 
 
 function $$(str) {
@@ -191,3 +273,4 @@ function $$(str) {
         return document.getElementsByTagName(str);
     }
 }
+

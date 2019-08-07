@@ -178,17 +178,83 @@
 
                 </div>
                 <div id="jsproCrumb" class="proCrumb">
-                    <a href="#" class="cBtn fl" title="上一个">&lt;</a>
+                    <a href="javascript:void(0);" id="cBtnF" class="cBtn fl" title="上一个">&lt;</a>
                     <div class="hideBox">
                         <div class="mBox"></div>
                     </div>
-                    <a href="#" class="cBtn fr" title="下一个">&gt;</a>
+                    <a href="javascript:void(0);" id="cBtnR" class="cBtn fr" title="下一个">&gt;</a>
                 </div>
             </div>
 
             <!-- 中间商品详情 -->
-            <div class="main_content">
+            <div class="main_content fl">
+                <div class="detail">
+                    <div class="mod_detailInfo_proName" id="detail_sku_main">
+                        <h1 class="mh" id="productMainName">AFTERSHOKZ韶音AS650 TREKZAIR骨传导耳机运动蓝牙耳机无线耳骨传导耳机骑行跑步 丹霞红</h1>
+                    </div>
+                    <div class="mod_detailInfo_priceSales ">
+                        <div class="price" id="currentPriceArea">
+                            <ul>
+                                <li class="tag" id="price_lable">
+                                    价格
+                                </li>
+                                <li class="inte_check">
+                                    <span id="current_price">¥898</span>
+                                </li>
+                                <li class="pricing" id="bookprice"></li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div id="sku_unit" class="sku_unit">
+                        <div id="choose" class="p-choose-wrap">
+                            <div id="choose-attr" class="p-choose">
+                                <div class="dt">选择颜色：</div>
+                                <div class="dd"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="detaiThreeAreas">
+                        <div class="addressbox" id="detaiThreeAreasDl">
+                            <dt id="haigou-area-wuliu">送货至</dt>
+                            <dd>
+                                <div class="add_01">
+                                    <div class="mod_selectbox">
+                                        <div id="area_name" class="input_btn">
+                                            陕西西安市雁塔区丈八沟街道
+                                        </div>
+                                    </div>
+                                    <div class="area_info">
+                                        <p>有货免运费</p>
+                                    </div>
+                                </div>
+                                <p class="add_02"></p>
+                            </dd>
+                        </div>
+                    </div>
+
+                    <div class="mod_cuputing">
+                        <div>
+                            <div class="computing_item" id="computing_item">
+                                <div class="computing_num">
+                                    <input type="text" class="num" value="1" id="product_amount">
+                                </div>
+                                <div class="computing_act">
+                                    <input type="button" class="add" value="+">
+                                    <input type="button" class="reduce" value="-">
+                                </div>
+                            </div>
+
+                            <div class="cartbox" id="BtnArea">
+                                <a href="javascript:void(0);" class="buy_btn6" id="addCart">
+                                    <span>加入购物车</span>
+                                </a>
+                                <a href="javascript:;" class="link J_priceNotice" id="J_priceNotice">降价通知</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- 右侧相似 -->
             <div class="r_mod">
@@ -200,6 +266,125 @@
 
     </div>
     <!-- 身体 end -->
+
+    <!-- 底部 -->
+    <div class="ft_wrap">
+        <div class="ft_footer">
+            <a href="#">
+                <img src="img/f1.jpg">
+                <b>正品保障</b>
+                <span>正品行货 放心选购</span>
+            </a>
+            <a href="#">
+                <img src="img/f2.jpg">
+                <b>满86包邮</b>
+                <span>满86元 免运费</span>
+            </a>
+            <a href="#">
+                <img src="img/f3.jpg">
+                <b>售后无忧</b>
+                <span>7天无理由退货</span>
+            </a>
+            <a href="#">
+                <img src="img/f4.jpg">
+                <b>准时送达</b>
+                <span>收货时间由你做主</span>
+            </a>
+        </div>
+        <div class="ft_service">
+            <div id="bottomHelpLinkId">
+                <dl>
+                    <dt>新手入门</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员制度</a></dd>
+                    <dd><a href="#">订单查询</a></dd>
+                    <dd><a href="#">服务协议及隐私说明</a></dd>
+                    <dd><a href="#">网站地图</a></dd>
+                </dl>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd><a href="#">货到付款</a></dd>
+                    <dd><a href="#">网上支付</a></dd>
+                    <dd><a href="#">礼品卡支付</a></dd>
+                    <dd><a href="#">其它支付</a></dd>
+                </dl>
+                <dl>
+                    <dt>配送服务</dt>
+                    <dd><a href="#">配送进度查询</a></dd>
+                    <dd><a href="#">商品验货与签收</a></dd>
+                </dl>
+                <dl>
+                    <dt>相关规则</dt>
+                    <dd><a href="#">平台规则</a></dd>
+                    <dd><a href="#">退换货政策</a></dd>
+                    <dd><a href="#">发票制度</a></dd>
+                    <dd><a href="#">帮助中心</a></dd>
+                </dl>
+            </div>
+            <!-- 二维码 -->
+            <div id="footerQRcode">
+                <div class="mobile_code">
+                    <p>APP更优惠</p>
+                    <a href="#">
+                        <img src="img/ewm1.png">
+                    </a>
+                </div>
+                <div class="mobile_code">
+                    <p>加微信查订单</p>
+                    <a href="#">
+                        <img src="img/ewm2.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p class="ft_footer_link">
+            </p>
+            <p class="ft_footer_link">
+                <a target="_blank">沪ICP备16050468号</a>
+                |
+                <a href="">经营证照</a>
+                |
+                <a href="#">互联网药品信息服务资格证(沪)-经营性-2017-0006</a>
+                |
+                <a>违法和不良信息举报电话：0527-88100253</a>
+                |
+                <a href="#">沪B2-20170039</a>
+                |
+                <a href="#">沪公网安备 31010502002939号</a>
+                |
+                <a href="#">友情链接</a>
+                |
+                <a href="#">出版物经营许可证</a>
+                |
+                <a href="#">增值电信业务经营许可证</a>
+            </p>
+            <p>Copyright© 1号店网上超市 2007-2019，All Rights Reserved</p>
+            <small id="footerbanner2LazyLoad" class="ft_pic_link">
+                <a href="#">
+                    <img src="img/small1.jpg">
+                </a>
+                <a href="#">
+                    <img src="img/small2.jpg">
+                </a>
+                <a href="#">
+                    <img src="img/small3.jpg">
+                </a>
+                <a href="#">
+                    <img src="img/small4.jpg">
+                </a>
+                <a href="#">
+                    <img src="img/small5.jpg">
+                </a>
+                <a href="#">
+                    <img src="img/small6.jpg">
+                </a>
+                <a href="">
+                    <img src="img/small7.jpg">
+                </a>
+            </small>
+        </div>
+    </div>
 </body>
 
 </html>
