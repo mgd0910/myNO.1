@@ -13,21 +13,19 @@ window.onload = function () {
         douIsCircle: false
     }, $$("#bannerId"));
 
+    ajax();
+
     category();
 
     newPeople();
 
     djs();
 
-    superShop();
-
     superBrand();
 
     quality();
 
     pick();
-
-    YouKnow();
 
     rightEwm();
 
@@ -40,8 +38,8 @@ window.onload = function () {
 
 
 
-function overOrout(){
-        //搜索框划过效果
+function overOrout() {
+    //搜索框划过效果
     $$("#keyword").onmouseover = function () {
         this.style.cssText = `
             border :1px solid  #ff4040;
@@ -195,29 +193,33 @@ function djs() {
     }, 1000)
 }
 
+function ajax() {
+    $.get("getGoodsList.php", {}, function (data) {
+        data = JSON.parse(data);
+        // console.log(typeof data);
+        // console.log(data);
+        superShop(data);
+        know(data)
+    }, 'text');
+
+    // $.get("getGoodsInfo.php", {
+    //         "goodsId": "01001"
+    //     },
+    //     function (data) {
+    //         console.log(typeof data);
+    //         console.log(data);
+    //         data=JSON.parse(data);
+    //         console.log(typeof data);
+    //     },
+    //     "text"
+    // );
+}
+
 //动态添加超级商品
-function superShop() {
-    let imgarr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-    let arr1 = [
-        "奥康 Aokang 休闲鞋圆头撞色平底女184332039白/黑37码",
-        "飞利浦（PHILIPS）男士电动剃须刀全身水洗干湿双剃剃胡刀胡须刀刮胡刀S9041/12",
-        "宝树行 轩尼诗XO第六代1500ml 干邑白兰地 珍藏版礼盒装",
-        "【官方旗舰 买1送1】朵拉朵尚补水保湿喷雾300ml+送150ml(男女士爽肤水柔肤化妆保湿薏仁水) 【亮肤补水】薏仁喷雾 300ml",
-        "四书五经 （绸面精装全六卷）文白对照",
-        "光威（GW） 正品光威路亚竿套装水滴轮枪柄双梢MH调 M调纺车轮直柄海竿抛竿钓鱼竿套装 双梢2.4米枪柄+光威水滴轮+线饵钳控套装",
-        "珍爱 洁面湿巾绿茶去油 夏季擦汗面部清洁湿纸巾 3包x80抽",
-        "俞兆林5双（买1送1共2盒即10双）袜子男短袜男士船袜春季薄款棉袜低帮运动袜浅口隐形袜潮袜 国期星星船袜5双（买1送1 ） 39-43",
-        "美的(Midea)100升单温冷冻冷藏迷你转换冷柜 家用冰柜BD/BC-100KMA（旋律金） BD/BC-100KMA旋律金"
-    ];
-
-    let arr2 = ['123', '124', '125', '126', '127', '128', '129', '130', '131'];
-
-    let arr3 = ['147', '152', '142', '156', '132', '165', '185', '158', '171'];
-
-    let arr4 = ['52', '96', '36', '64', '12', '88', '75', '92', '42'];
+function superShop(data) {
 
     let liDoms = [];
-    for (let i in imgarr) {
+    for (let i = 0; i < 9; i++) {
         let liDom = document.createElement("li");
         liDom.style.cssText = `
             width: 210px;
@@ -244,7 +246,7 @@ function superShop() {
             display:inline-block;
             position: relative;
         `;
-        a.href = `#${imgarr[i]}`;
+        a.href = "#";
         liDom.appendChild(a);
 
         let imgDom = document.createElement("img");
@@ -256,7 +258,8 @@ function superShop() {
             left: 50%;
             margin-left: -55px;
         `;
-        imgDom.src = `img/img${imgarr[i]}.jpg`;
+        // imgDom.src = `img/img${imgarr[i]}.jpg`;
+        imgDom.src = data[i].goodsImg;
         a.appendChild(imgDom);
         let divDom = document.createElement("div");
         divDom.style.cssText = `
@@ -278,7 +281,7 @@ function superShop() {
             text-overflow: ellipsis;
             color:#000;
         `;
-        divSpanDom.innerHTML = arr1[i];
+        divSpanDom.innerHTML = data[i].goodsDesc;
         divDom.appendChild(divSpanDom);
 
         let divBarDom = document.createElement("div");
@@ -293,7 +296,7 @@ function superShop() {
 
         let divProgressDom = document.createElement("div");
         divProgressDom.style.cssText = `
-            width:${arr4[i]}%;
+            width:${data[i].beiyong2}%;
             height: 100%;
             border-radius: 100px;
             background-color: #d9161d;
@@ -319,7 +322,7 @@ function superShop() {
             float:left;
             margin-left:30px;
         `;
-        divActDom.innerHTML = "￥" + arr2[i];
+        divActDom.innerHTML = "￥" + data[i].goodsPrice;
         divConDom.appendChild(divActDom);
 
         let divUndDom = document.createElement("div");
@@ -331,10 +334,11 @@ function superShop() {
             margin-left: 4px;
             float:left;
         `;
-        divUndDom.innerHTML = "￥" + arr3[i];
+        divUndDom.innerHTML = "￥" + data[i].beiyong1;
         divConDom.appendChild(divUndDom);
     }
 }
+
 
 //动态添加超级品牌
 function superBrand() {
@@ -990,44 +994,8 @@ function func(boxId, arr, arr1, arr2, arr3, arr4) {
 }
 
 // 懂你想要
-function YouKnow() {
 
-    let arr = [
-        [
-            "shop1.jpg",
-            "修正祛痘膏送寡肽原液精华祛痘印淡化痘疤痘坑芦荟胶祛痘产品套装男女青春痘粉刺精华面霜 单只装20g",
-            "69.9"
-        ],
-        [
-            "shop2.jpg",
-            "WIS隐形水润面膜【24片装】补水保湿玻尿酸清洁控油收缩毛孔提亮肤色男女士学生贴化妆品套装",
-            "98.0"
-        ],
-        [
-            "shop3.jpg",
-            "超媛时尚套装女2019夏季新款韩版衬衫小清新上衣半身裙两件套雪纺衫NRJC321-2#8270 粉色套装 S",
-            "125.9"
-        ],
-        [
-            "shop4.jpg",
-            "实木 乌檀木整木实木家用防裂抗菌防霉厨房案板切菜水果蔬菜板砧 2-4人40*28*3CM±0.3C",
-            "209.0"
-        ],
-        [
-            "shop5.jpg",
-            "宝宝帽子夏遮阳帽1-4岁2空顶鸭舌帽薄款3防晒儿童帽子字母棒球帽 白色 适用头围(47-52cm)  参考年龄(1岁半-6岁)",
-            "48.0"
-        ],
-        [
-            "shop6.jpg",
-            "A-H【品牌直降】2019新款夏百搭配长裙子的晚晚凉鞋仙女风温柔学生网红ins潮平底 棕色 35",
-            "89.0"
-        ]
-    ];
-    know(arr);
-}
-
-function know(arr) {
+function know(data) {
     let under_log = document.createElement("div");
     under_log.style.cssText = `
         width: 100%;
@@ -1080,7 +1048,7 @@ function know(arr) {
     like_list.appendChild(ulDom);
 
     let liDoms = [];
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         let liDom = document.createElement("li");
         liDom.style.cssText = `
             width: 168px;
@@ -1106,13 +1074,17 @@ function know(arr) {
             margin-top: 10px;
         `;
         liDom.appendChild(pro_pic);
+        // pro_pic.onclick=function(){
+        //     let localStorage
+        // }
 
         let img2 = document.createElement("img");
         img2.style.cssText = `
             width: 150px;
             height: 150px;
         `;
-        img2.src = `img/${arr[i][0]}`;
+        img2.setAttribute("index",data[i].goodsId);
+        img2.src = data[i].goodsImg;
         pro_pic.appendChild(img2);
 
         let p2 = document.createElement("p");
@@ -1127,7 +1099,7 @@ function know(arr) {
             color: #333;
             line-height: 20px;
         `;
-        p2.innerHTML = `${arr[i][1]}`;
+        p2.innerHTML = data[i].goodsDesc;
         liDom.appendChild(p2);
 
         let p3 = document.createElement("p");
@@ -1148,7 +1120,7 @@ function know(arr) {
             font-size: 14px;
             margin-left: -3px;
         `;
-        span1.innerHTML = `${arr[i][2]}`;
+        span1.innerHTML = data[i].goodsPrice;
         p3.appendChild(span1);
 
         let pro_tag = document.createElement("div");
@@ -1287,6 +1259,14 @@ function know(arr) {
         sin_xs.onmouseout = function () {
             this.style.backgroundColor = "#fff0f0";
         }
+
+        //点击事件
+        img2.onclick=function(){
+            let  localStorageStr=this.getAttribute("index");
+            console.log(this.getAttribute("index"));
+            localStorage.setItem("shopId",localStorageStr);
+            location.href="product.html";
+        }
     }
 
     let status_dd = document.createElement("div");
@@ -1350,19 +1330,19 @@ function rightEwm() {
     `;
     document.body.appendChild(happy_summer);
 
-    window.onscroll=function() {
-        if (document.documentElement.scrollTop>=1000) {
-            happy_summer.style.display="block";
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop >= 1000) {
+            happy_summer.style.display = "block";
         }
-        if (document.documentElement.scrollTop<=100) {
-            happy_summer.style.display="none";
+        if (document.documentElement.scrollTop <= 100) {
+            happy_summer.style.display = "none";
         }
 
-        if (document.documentElement.scrollTop>=700) {
-            $$("#sousuoId").style.display="block";
+        if (document.documentElement.scrollTop >= 700) {
+            $$("#sousuoId").style.display = "block";
         }
-        if (document.documentElement.scrollTop<=700) {
-             $$("#sousuoId").style.display="none";
+        if (document.documentElement.scrollTop <= 700) {
+            $$("#sousuoId").style.display = "none";
         }
     };
 
@@ -1468,7 +1448,7 @@ function rightEwm() {
     h_zd.innerHTML = "TOP&nbsp;"
     happy_summer.appendChild(h_zd);
     //回到顶部
-    h_zd.onclick=function() {
+    h_zd.onclick = function () {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         if (scrollTop != 0) {
             document.documentElement.scrollTop = 0;
@@ -1482,36 +1462,36 @@ function rightEwm() {
 }
 
 //滑动搜索框
-function souSuo(){
-    let divDom=document.createElement("div");
-    divDom.style.cssText=`
+function souSuo() {
+    let divDom = document.createElement("div");
+    divDom.style.cssText = `
         width: 1070px;
         height: 60px;
         margin:0 auto;
     `;
     $$("#sousuoId").appendChild(divDom);
 
-    let a1=document.createElement("a");
-    a1.style.cssText=`
+    let a1 = document.createElement("a");
+    a1.style.cssText = `
         display: block;
         width: 150px;
         height: 60px;
         float: left;
         margin-right: 70px;
     `;
-    a1.href="#";
+    a1.href = "#";
     divDom.appendChild(a1);
 
-    let img1=document.createElement("img");
-    img1.style.cssText=`
+    let img1 = document.createElement("img");
+    img1.style.cssText = `
         width: 150px;
         height: 60px;
     `;
-    img1.src="img/3.jpg";
+    img1.src = "img/3.jpg";
     a1.appendChild(img1);
 
-    let divdom2=document.createElement("div")
-    divdom2.style.cssText=`
+    let divdom2 = document.createElement("div")
+    divdom2.style.cssText = `
         width:510px;
         height:40px;
         border-radius: 100px;
@@ -1523,8 +1503,8 @@ function souSuo(){
     `;
     divDom.appendChild(divdom2);
 
-    inputDom=document.createElement("input");
-    inputDom.style.cssText=`
+    inputDom = document.createElement("input");
+    inputDom.style.cssText = `
         width: 406px;
         height: 41px;
         border-top-left-radius: 100px;
@@ -1540,8 +1520,8 @@ function souSuo(){
     `;
     divdom2.appendChild(inputDom);
 
-    let button=document.createElement("button");
-    button.style.cssText=`
+    let button = document.createElement("button");
+    button.style.cssText = `
         float: left;
         height: 36px;
         border: 0 none;
@@ -1554,15 +1534,15 @@ function souSuo(){
     `;
     divdom2.appendChild(button);
 
-    let img2=document.createElement("img")
-    img2.style.cssText=`
+    let img2 = document.createElement("img")
+    img2.style.cssText = `
         margin-left:15px;
     `;
-    img2.src=`img/13.gif`;
+    img2.src = `img/13.gif`;
     button.appendChild(img2);
 
-    let divdom3=document.createElement("div");
-    divdom3.style.cssText=`
+    let divdom3 = document.createElement("div");
+    divdom3.style.cssText = `
         width:122px;
         height:44px;
         float: right;
@@ -1577,24 +1557,24 @@ function souSuo(){
     `;
     divDom.appendChild(divdom3);
 
-    let img3=document.createElement("img");
-    img3.style.cssText=`
+    let img3 = document.createElement("img");
+    img3.style.cssText = `
         display: inline-block;
     `;
-    img3.src="img/2.jpg";
+    img3.src = "img/2.jpg";
     divdom3.appendChild(img3);
 
-    let spanDom=document.createElement("span");
-    spanDom.style.cssText=`
+    let spanDom = document.createElement("span");
+    spanDom.style.cssText = `
         margin-left:10px;
     `;
-    spanDom.innerHTML="购物车";
+    spanDom.innerHTML = "购物车";
     divdom3.appendChild(spanDom);
 }
 
 
 //cookie获取
-function cookie(){
+function cookie() {
     let username = getCookie("username");
     if (username) {
         // console.log($$(".hd_login_name"));
@@ -1604,7 +1584,7 @@ function cookie(){
     } else {
         $$("#global_unlogin").style.display = "block";
     }
-}   
+}
 
 
 function $$(str) {
@@ -1616,4 +1596,3 @@ function $$(str) {
         return document.getElementsByTagName(str);
     }
 }
-

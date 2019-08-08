@@ -1,10 +1,25 @@
+
 $(document).ready(function () {
+    
+    ajax();
     category();
     overOrout();
-    mirror();
     change();
 });
 
+function ajax(){
+    let localStorageStr=localStorage.getItem("shopId");
+    console.log(localStorageStr);
+    $.get("getGoodsInfo.php", {
+        "goodsId":localStorageStr
+    },
+        function (data) {
+            mirror(data);
+            change(data);
+        },
+        "json"
+    );
+}
 
 function overOrout() {
     //搜索框划过效果
@@ -134,38 +149,41 @@ function category() {
 }
 
 //左侧盒子
-function mirror() {
-    let imgarr = [
-        "imgs/Good1.jpg",
-        "imgs/Good2.jpg",
-        "imgs/Good3.jpg",
-        "imgs/Good4.jpg",
-        "imgs/Good5.jpg",
-        "imgs/Good6.jpg",
-        "imgs/Good7.jpg",
-        "imgs/Good8.jpg"
-    ];
+function mirror(data) {
+    console.log(data);
+    // let imgarr = [
+    //     "imgs/Good1.jpg",
+    //     "imgs/Good2.jpg",
+    //     "imgs/Good3.jpg",
+    //     "imgs/Good4.jpg",
+    //     "imgs/Good5.jpg",
+    //     "imgs/Good6.jpg",
+    //     "imgs/Good7.jpg",
+    //     "imgs/Good8.jpg"
+    // ];
 
     $("#jqzoom").css({
-        "background": "url(imgs/Good1.jpg) no-repeat",
+        "background": "url("+data.goodsImg+") no-repeat",
         "background-size": "400px 400px"
     });
 
-    for (let i = 1; i <= imgarr.length; i++) {
+    for (let i = 1; i <= 8; i++) {
         let bDom = $("<b>");
         $(".mBox").append(bDom);
 
         let imgDom = document.createElement("img");
-        imgDom.src = imgarr[i - 1];
+        // var a=data[`beiyong${i}`];
+        // console.log(a);
+        imgDom.src =data[`beiyong${i+2}`];
         bDom.append(imgDom);
         bDom.click(function (e) { 
             $("#jqzoom").css({
-                "background-image": "url(imgs/Good" + i + ".jpg)",
+                "background-image": "url("+imgDom.src+")",
                 "background-repeat": " no-repeat",
                 "background-size": "400px 400px"
             });
             $("#showBox").css({
-                "background-image": "url(imgs/Good" + i + ".jpg)",
+                "background-image": "url("+imgDom.src+")",
                 "background-repeat": " no-repeat",
                 "background-position": " 0px 0px",
                 "background-size": "1200px 1200px"
@@ -175,6 +193,9 @@ function mirror() {
             
         });
     }
+
+    $("#productMainName").html(data.goodsDesc);
+    $("#current_price").html("￥"+data.goodsPrice);
 
     new Mirror({
         mulitple: 3,
@@ -231,7 +252,7 @@ function mirror() {
 
 
 //选择
-function change(){
+function change(data){
     for(let i=0;i<4;i++){
         let item=$("<div>");
         item.attr("class","item");
@@ -251,8 +272,8 @@ function change(){
         a.href="#";
         item.append(a);
         
-        let img=document.createElement("img")
-        img.src=`imgs/small1.png`;
+        let img=document.createElement("img");
+        img.src=`${data["beiyong11"]}`;
         a.append(img);
 
         let p=document.createElement("p");
