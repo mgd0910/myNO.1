@@ -77,32 +77,26 @@ $(function () {
 
 //购物车商品
 $(document).ready(function () {
-    goods();
+    ajax();
 });
 
 
-//动态创建商品信息
-function goods() {
-    let arr = [
-        {
-            "title": "乒艳礼品拼购专营店",
-            "imgsrc": "imgs/goods1.jpg",
-            "jieshao": "防珍珠锁骨链韩国choker项圈女颈带脖链网红脖子饰品短款颈链项链 1#亮闪闪金色 ",
-            "pic": "   46.00    ",
-            "kg": "1.00kg",
-            "shuoming": "1#亮闪闪金色"
+function ajax(){
+    $.get("getShoppingCart.php", {
+        "vipName":"mgd12345"
+    },
+        function (data) {
+            console.log(data);
+            goods(data);
         },
-        {
-            "title": "自营",
-            "imgsrc": "imgs/goods2.jpg",
-            "jieshao": "    范思哲(VERSACE)晶钻女用香水 30ml (又名：范思哲(VERSACE)晶钻女士香水 30ml 香氛) 持久自然 ",
-            "pic": "   349.00    ",
-            "kg": "0.16kg",
-            "shuoming": "晶钻30ml"
-        }
-    ];
+        "json"
+    );
+}
 
-    for (let i = 0; i < arr.length; i++) {
+//动态创建商品信息
+function goods(data) {
+    
+    for (let i = 0; i < data.length; i++) {
         let cartBox = $("<div>");
         cartBox.attr("class", "cartBox");
         $("#goodsId").append(cartBox);
@@ -122,7 +116,7 @@ function goods() {
 
         let dp = $("<a>");
         dp.attr("href", "#");
-        dp.html(arr[i].title);
+        dp.html(data[i].beiyong5);
         shop_name.append(dp);
 
         let shopChoice = $('<input type="checkbox" class="shopChoice">');
@@ -171,7 +165,7 @@ function goods() {
         list_img.append(a1);
 
         let img1 = document.createElement("img");
-        img1.src = arr[i].imgsrc;
+        img1.src = data[i].goodsImg;
         a1.append(img1);
 
         let list_text = $("<div>");
@@ -180,7 +174,7 @@ function goods() {
 
         let a2 = $("<a>");
         a2.attr("href", "#");
-        a2.html(arr[i].jieshao);
+        a2.html(data[i].jieshao);
         list_text.append(a2);
 
         let list_info = $("<li>");
@@ -192,7 +186,7 @@ function goods() {
         list_info.append(p1);
 
         let p2 = $("<p>");
-        p2.html(arr[0].shuoming);
+        p2.html(data[i].goodsDesc);
         list_info.append(p2);
 
         let list_price = $("<li>");
@@ -201,7 +195,7 @@ function goods() {
 
         let price = $("<p>");
         price.attr("class", "price");
-        price.html("￥" + arr[i].pic);
+        price.html("￥" + data[i].goodsPrice);
         list_price.append(price);
 
         let list_amount = $("<li>");
@@ -215,7 +209,7 @@ function goods() {
         let reduce = $("<a>");
         reduce.attr({
             "class": "reduce",
-            "href": "#"
+            "href": "javascript:;"
         });
         reduce.html("-")
         amount_box.append(reduce);
@@ -226,7 +220,7 @@ function goods() {
         let plus = $("<a>");
         plus.attr({
             "class": "plus",
-            "href": "#"
+            "href": "javascript:;"
         });
         plus.html("+")
         amount_box.append(plus);
@@ -237,7 +231,7 @@ function goods() {
 
         let sum_price = $("<p>");
         sum_price.attr("class", "sum_price");
-        sum_price.html(arr[i].pic);
+        sum_price.html(data[i].goodsPrice);
         list_sum.append(sum_price);
 
 
@@ -256,7 +250,9 @@ function goods() {
         });
         delBtn.html("移除商品");
         del.append(delBtn);
+
     }
+    change()
 }
 
 
@@ -264,7 +260,7 @@ function goods() {
  * 购物车选择与计算函数
  */
 
-$(function () {
+function change(){
 
     //全局的checkbox选中和未选中的样式
     var $allCheckbox = $('input[type="checkbox"]'), //全局的全部checkbox
@@ -500,6 +496,6 @@ $(function () {
             }
         }
     }
-});
+};
 
 

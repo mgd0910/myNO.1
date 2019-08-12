@@ -1,10 +1,10 @@
 
 $(document).ready(function () {
-    
-    ajax();
     category();
     overOrout();
-    change();
+    ajax();
+    addOrreduce();
+    addShop();
 });
 
 function ajax(){
@@ -259,8 +259,8 @@ function change(data){
         $(".dd").append(item);
 
         item.click(function (e) { 
-            item.attr("class","selected");
-            item.siblings().attr("class","");
+            item.attr("class","item selected");
+            item.siblings().attr("class","item");
         });
 
         let b=$("<b>");
@@ -277,12 +277,47 @@ function change(data){
         a.append(img);
 
         let p=document.createElement("p");
-        p.innerHTML="蓝色";
+        p.innerHTML=data.beiyong12;
         a.append(p);
     }
 }
 
+// 加减按钮
+function addOrreduce(){
+    let count=parseInt($("#product_amount").val())
+    $(".add").click(function (e) { 
+        count=count+1;
+        $("#product_amount").val(count);
+    });
 
+    $(".reduce").click(function (e) { 
+        count=count-1;
+        if(count<=1){
+            count=1;
+        }
+        $("#product_amount").val(count);
+    });
+}
+
+//加入购物车 
+function addShop(){
+    let localStorageStr=localStorage.getItem("shopId");
+    let count=parseInt($("#product_amount").val())
+    console.log(count);
+    $("#addCart").click(function (e) { 
+        $.get("addShoppingCart.php", {
+            "vipName":"mgd12345",
+            "goodsId":localStorageStr,
+            "goodsCount":count
+        },
+            function (data) {
+                console.log(data);
+            },
+            "json"
+        );
+        location.href="shopCar.html";
+    });
+}
 
 
 function $$(str) {

@@ -109,6 +109,7 @@ function ajaxPromise(obj){
 		param:"",
 		isAsync:true
 	};
+	  
 
 	let endObj = {};
 	for(let key in defaultObj){//循环json对象
